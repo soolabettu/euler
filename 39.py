@@ -5,7 +5,6 @@ from collections import defaultdict
 my_dict = defaultdict(int)
 
 def solve():
-    ans = 0
     for i in range(1, 1001):
         for j in range(i+1, 1001):
             if i + j > 1000:
@@ -19,7 +18,6 @@ def solve():
                     
                     if i*i + j*j == k*k:
                         my_dict[i + j + k] += 1
-                        # ans = max(ans, my_dict[i + j + k])
 
     print(max(my_dict, key=my_dict.get))
 
