@@ -33,6 +33,7 @@ for idx, i in enumerate(num):
 print(28123*28124/2 - sum(ans))
 end = time.time()
 elapsed = end - start
+
 print(f"Program took {elapsed:.2f} seconds to run")
 
 
