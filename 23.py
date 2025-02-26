@@ -35,5 +35,3 @@ end = time.time()
 elapsed = end - start
 
 print(f"Program took {elapsed:.2f} seconds to run")
-
-
