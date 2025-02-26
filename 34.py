@@ -9,6 +9,7 @@ import math
 
 nums = []
 
+
 def solve():
     x = 10
     ans = 0
@@ -21,7 +22,6 @@ def solve():
             sum += math.factorial(a)
             if sum > x:
                 break
-
 
         if sum == x:
             nums.append(sum)
