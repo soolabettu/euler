@@ -16,6 +16,3 @@ while True:
     if count > 500:
         print(seq)
         break
-
-
-

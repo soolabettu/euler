@@ -4,10 +4,11 @@
 import math
 import time
 from collections import defaultdict
-import sympy    
+import sympy
 
 import resource, sys
-resource.setrlimit(resource.RLIMIT_STACK, (2**29,-1))
+
+resource.setrlimit(resource.RLIMIT_STACK, (2**29, -1))
 sys.setrecursionlimit(10**6)
 
 start = time.time()
@@ -23,5 +24,3 @@ print(distinct)
 end = time.time()
 elapsed = end - start
 print(f"Program took {elapsed:.2f} seconds to run")
-
-

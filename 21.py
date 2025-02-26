@@ -4,7 +4,7 @@
 import math
 import time
 from collections import defaultdict
-import sympy    
+import sympy
 
 
 start = time.time()
@@ -14,7 +14,7 @@ my_dict = defaultdict(bool)
 for i in range(1, 10000):
     if my_dict[i]:
         continue
-    
+
     sum = 1
     for j in range(2, int(math.sqrt(i)) + 1):
         if i % j == 0:
@@ -28,7 +28,7 @@ for i in range(1, 10000):
     if sum1 == i and sum != i:
         my_dict[i] = True
         my_dict[sum] = True
-        print(sum , i)
+        print(sum, i)
         ans += sum + i
 
 print(ans)

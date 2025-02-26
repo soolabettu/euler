@@ -2,9 +2,11 @@
 
 from datetime import date, timedelta
 import time
+
 start = time.time()
 
 import sympy
+
 primes = []
 for i in range(2, 1001):
     if sympy.isprime(i):
@@ -19,7 +21,7 @@ for i in primes:
         expr = 0
         n = 0
         while True:
-            expr = n*n + j*n + i
+            expr = n * n + j * n + i
             if sympy.isprime(expr):
                 if n > ans:
                     prod = j * i
@@ -34,7 +36,7 @@ for i in primes:
         expr = 0
         n = 0
         while True:
-            expr = n*n - j*n + i
+            expr = n * n - j * n + i
             if expr < 0:
                 break
             if sympy.isprime(expr):

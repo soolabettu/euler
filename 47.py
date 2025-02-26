@@ -4,10 +4,11 @@
 import math
 import time
 from collections import defaultdict
-import sympy    
+import sympy
 
 import resource, sys
-resource.setrlimit(resource.RLIMIT_STACK, (2**29,-1))
+
+resource.setrlimit(resource.RLIMIT_STACK, (2**29, -1))
 sys.setrecursionlimit(10**6)
 
 start = time.time()
@@ -16,7 +17,7 @@ start = time.time()
 def fun(num, idx, count):
     if num == 1:
         return distinct_factors
-    
+
     if num % primes[idx] == 0:
         distinct_factors.add(primes[idx])
         count = fun(num // primes[idx], idx, distinct_factors)
@@ -24,6 +25,7 @@ def fun(num, idx, count):
         count = fun(num, idx + 1, count)
 
     return distinct_factors
+
 
 ans = 0
 primes = []
@@ -40,14 +42,12 @@ for i in range(2, 1000000):
         ans.append(i)
     else:
         ans = []
-    
+
     if len(ans) == 4:
         print(ans)
         break
-        
+
 
 end = time.time()
 elapsed = end - start
 print(f"Program took {elapsed:.2f} seconds to run")
-
-

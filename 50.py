@@ -3,7 +3,7 @@
 import math
 import time
 from collections import defaultdict
-import sympy    
+import sympy
 
 start = time.time()
 primes = []
@@ -28,16 +28,9 @@ for idx, i in enumerate(primes):
             if cnt > ans:
                 result = sum
                 ans = cnt
-        
-
-
-
-
 
 
 print(ans, result)
 end = time.time()
 elapsed = end - start
 print(f"Program took {elapsed:.2f} seconds to run")
-
-

@@ -2,22 +2,24 @@
 
 from datetime import date, timedelta
 import time
+
 start = time.time()
+
 
 def fun(d):
     num = 1
     for i in range(d):
-        num = (num*10)%d
+        num = (num * 10) % d
 
     num1 = num
     len1 = 0
     while True:
-        num = (num*10)%d
+        num = (num * 10) % d
         len1 += 1
         if num == num1:
             break
     return d, len1
-    
+
 
 ans = 0
 ans_i = 0

@@ -4,7 +4,7 @@
 import math
 import time
 from collections import defaultdict
-import sympy    
+import sympy
 
 
 start = time.time()
@@ -23,8 +23,6 @@ def all_rotations(n):
         rotated_str = num_str[i:] + num_str[:i]
         rotations.append(int(rotated_str))
     return rotations
-
-
 
 
 ans = 0

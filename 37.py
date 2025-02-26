@@ -4,7 +4,7 @@
 import math
 import time
 from collections import defaultdict
-import sympy    
+import sympy
 
 
 start = time.time()
@@ -21,7 +21,6 @@ while True:
             flag = False
             break
         var = var[1:]
-    
 
     var = str(i)
     while var:
@@ -39,7 +38,7 @@ while True:
         break
 
     i += 1
-    
+
 print(sum)
 end = time.time()
 elapsed = end - start

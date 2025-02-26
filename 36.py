@@ -4,14 +4,16 @@
 import math
 import time
 from collections import defaultdict
-import sympy    
+import sympy
 
 
 start = time.time()
 ans = 0
 
+
 def is_palindrome(s):
     return s == s[::-1]
+
 
 for i in range(1, 1000000):
     if is_palindrome(str(i)):

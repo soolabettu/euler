@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 var = input()
-candidate = ''
+candidate = ""
 ans = 0
 for i in var:
     candidate += i
-    if i == '0':
-        candidate = ''
+    if i == "0":
+        candidate = ""
 
     if len(candidate) == 13:
         temp_ans = 1
@@ -15,7 +15,6 @@ for i in var:
 
         ans = max(ans, temp_ans)
         candidate = candidate[1:]
-        
+
 
 print(ans)
-        
