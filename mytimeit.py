@@ -1,3 +1,6 @@
+import time
+
+
 class MyTimer:
     def __init__(self, label="Elapsed time"):
         self.label = label
