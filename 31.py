@@ -5,9 +5,6 @@ from mytimeit import *
 import time
 
 
-#!/usr/bin/env python3
-
-
 def solve():
     dp = [[0] * 201]
     for i in range(1, 8):
