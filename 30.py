@@ -19,7 +19,6 @@ def solve():
             sum += math.pow(rem, 5)
 
         if sum == i:
-            print(sum)
             ans += sum
 
     print(ans)
