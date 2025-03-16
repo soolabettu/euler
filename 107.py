@@ -2,10 +2,12 @@ import sys
 
 from mytimeit import *
 
+
 def find(parent, x):
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
     return parent[x]
+
 
 def union(parent, rank, x, y):
     root_x = find(parent, x)
@@ -19,6 +21,7 @@ def union(parent, rank, x, y):
             parent[root_y] = root_x
             rank[root_x] += 1
 
+
 def kruskal_mst(adj_matrix):
     n = len(adj_matrix)
     edges = []
@@ -30,7 +33,7 @@ def kruskal_mst(adj_matrix):
                 edges.append((w, i, j))
     # Sort by weight
     edges.sort(key=lambda x: x[0])
-    
+
     parent = [i for i in range(n)]
     rank = [0] * n
 
@@ -47,13 +50,15 @@ def kruskal_mst(adj_matrix):
 
     return mst_edges, mst_weight
 
+
 def parse_adjacency_matrix(lines):
     matrix = []
     for line in lines:
-        values = line.strip().split(',')
-        row = [0 if val.strip() == '-' else int(val.strip()) for val in values]
+        values = line.strip().split(",")
+        row = [0 if val.strip() == "-" else int(val.strip()) for val in values]
         matrix.append(row)
     return matrix
+
 
 def total_weight_of_graph(adj_matrix):
     n = len(adj_matrix)
@@ -91,7 +96,7 @@ def solve():
 
     # print("\nAdjacency Matrix:")
 
+
 if __name__ == "__main__":
     with MyTimer(solve) as timer:
         solve()
-

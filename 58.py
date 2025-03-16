@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 
 from mytimeit import *
@@ -22,10 +21,10 @@ def solve():
 
         ans += 1
         x += 2
-        
+
         # print(cnt, total_cnt, cnt/total_cnt, num)
         # time.sleep(5)
-        if cnt/total_cnt < 0.1:
+        if cnt / total_cnt < 0.1:
             print(math.sqrt(num))
             break
 

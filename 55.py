@@ -3,8 +3,10 @@
 from mytimeit import *
 import time
 
+
 def is_palindrome(n):
     return str(n) == str(n)[::-1]
+
 
 def reverse_and_add(n):
     return n + int(str(n)[::-1])
@@ -33,7 +35,6 @@ def solve():
 
     print("Count of Lychrel candidates under 10,000:", count_lychrels)
     # print("Lychrel candidates:", lychrel_list)
-
 
 
 if __name__ == "__main__":
