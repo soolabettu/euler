@@ -3,6 +3,7 @@ import sys
 import heapq
 import mytimeit
 
+
 def load_grid(path: str):
     """
     Reads a matrix of integers from `path`.
@@ -24,11 +25,14 @@ def load_grid(path: str):
         raise ValueError("Malformed grid: empty or non-rectangular.")
     return grid
 
+
 def to_index(r, c, cols):
     return r * cols + c
 
+
 def from_index(idx, cols):
     return divmod(idx, cols)
+
 
 def build_adjacency(grid):
     """
@@ -38,7 +42,7 @@ def build_adjacency(grid):
     """
     R, C = len(grid), len(grid[0])
     adj = {to_index(r, c, C): [] for r in range(R) for c in range(C)}
-    dirs = [(-1,0),(1,0),(0,-1),(0,1)]
+    dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]
     for r in range(R):
         for c in range(C):
             u = to_index(r, c, C)
@@ -50,6 +54,7 @@ def build_adjacency(grid):
                     adj[u].append((v, w))
     return adj
 
+
 def dijkstra_min_path_sum(grid, adj):
     """
     Dijkstra from (0,0) to (R-1,C-1).
@@ -57,7 +62,7 @@ def dijkstra_min_path_sum(grid, adj):
     """
     R, C = len(grid), len(grid[0])
     start = 0
-    goal  = to_index(R-1, C-1, C)
+    goal = to_index(R - 1, C - 1, C)
 
     dist = {u: float("inf") for u in adj}
     prev = {u: None for u in adj}
@@ -90,11 +95,13 @@ def dijkstra_min_path_sum(grid, adj):
 
     return dist[goal], path  # total cost, list of node indices
 
+
 def pretty_path(path, grid):
     R, C = len(grid), len(grid[0])
     coords = [from_index(idx, C) for idx in path]
     values = [grid[r][c] for r, c in coords]
     return coords, values
+
 
 with mytimeit.MyTimer() as t:
     if len(sys.argv) != 2:
@@ -110,5 +117,3 @@ with mytimeit.MyTimer() as t:
     print("Minimum-sum path cost:", total_cost)
     # print("Path (r,c):", coords)
     # print("Path values:", vals)
-
-

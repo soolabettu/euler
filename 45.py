@@ -17,5 +17,6 @@ def solve() -> int:
 
         n += 1
 
+
 with mytimeit.MyTimer() as t:
     print(solve())
