@@ -91,3 +91,13 @@ from mytimeit import *
 
 with MyTimer() as t:
     print(solve(1000))
+
+
+def find_min_solution(D):
+    """Find the minimal solution for x^2 - Dy^2 = 1 using continued fractions."""
+    a, b, p, q = 1, 0, 0, 1
+    while True:
+        a, p, q = a * p + p, a * q + q, p
+        b += 1
+        if a**2 - D * b**2 == 1:
+            return a
