@@ -1,11 +1,7 @@
 import math
 
-# Re-create and run after kernel reset
-script_path = "/mnt/data/pell_cf.py"
-
 from dataclasses import dataclass
 from typing import List, Tuple
-
 
 @dataclass
 class Step:
