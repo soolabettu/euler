@@ -1,4 +1,3 @@
-
 def sieve_primes(limit: int) -> list[int]:
     """Return a list of primes up to and including limit using Sieve of Eratosthenes."""
     sieve = [True] * (limit + 1)
@@ -14,24 +13,27 @@ def sieve_primes(limit: int) -> list[int]:
 
     return [i for i, is_prime in enumerate(sieve) if is_prime and i * i <= limit]
 
+
 import itertools
 
-def solve(n, limit):
+
+def solve(limit):
     primes = sieve_primes(limit)
-    print(primes)
-    updated = [p for p in primes for _ in range(3)]
-    permutations = list(itertools.permutations(updated, 3))
+    bucket1 = [prime**2 for prime in primes if prime**2 < 50_000_000]
+    bucket2 = [prime**3 for prime in primes if prime**3 < 50_000_000]
+    bucket3 = [prime**4 for prime in primes if prime**4 < 50_000_000]
     uniq_sums = set()
-    # print(permutations)
-    for p in permutations:
-        result = p[0] ** 2 + p[1] ** 3 + p[2] ** 4
-        if result < limit:
-            uniq_sums.add(result)
-        
+    for b1 in bucket1:
+        for b2 in bucket2:
+            for b3 in bucket3:
+                x = b1 + b2 + b3
+                if x < limit:
+                    uniq_sums.add(x)
+
     return len(uniq_sums)
 
-    
 
 from mytimeit import *
+
 with MyTimer() as t:
-    print(solve(10000, 50_000_000))
+    print(solve(50_000_000))
