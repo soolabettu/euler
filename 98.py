@@ -150,7 +150,7 @@ def solve():
                         if reconstructed in anagrams[word]:
                             print(
                                 "Candidate solution {}, {}, {}, {}".format(
-                                    word, reconstructed, num, x
+                                    word, word1, num, x
                                 )
                             )
                             ans = max(ans, max(num, x))
