@@ -110,10 +110,6 @@ def check_anagrams(words):
     return result
 
 
-# Example
-words = ["listen", "silent", "enlist", "rat", "tar", "art", "hello"]
-
-
 def solve():
     words = read_data()
     nums = square_numbers()
