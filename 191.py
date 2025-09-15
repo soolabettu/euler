@@ -28,6 +28,7 @@ def count_valid_iter(n: int) -> int:
 
     return sum(dp[r][u] for r in range(3) for u in (0, 1))
 
+
 def solve(limit):
     print(count_valid_iter(limit))
 
