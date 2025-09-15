@@ -1,36 +1,39 @@
-def count_valid_iter(n: int) -> int:
+def count_valid_memo(n: int) -> int:
     """
-    Count strings of length n over {A, O, L} with:
-      - no 'AAA' anywhere (<=2 consecutive A's),
-      - at most one 'L' total.
-    Iterative DP (tabulation) with O(n * 3 * 2) time and O(1) space.
+    Count length-n strings over {A,O,L} with:
+      - no 'AAA' (≤2 consecutive A's),
+      - at most one 'L' in total.
+    Recursive + manual memoization (no lru_cache).
     """
-    # dp[runA][usedL]
-    dp = [[0, 0], [0, 0], [0, 0]]
-    dp[0][0] = 1  # empty prefix
+    memo = {}  # (pos, runA, usedL) -> count
 
-    for _ in range(n):
-        new = [[0, 0], [0, 0], [0, 0]]
-        for runA in range(3):
-            for usedL in (0, 1):
-                c = dp[runA][usedL]
-                if not c:
-                    continue
-                # Add 'A' if it won't create 'AAA'
-                if runA < 2:
-                    new[runA + 1][usedL] += c
-                # Add 'L' if we haven't used one yet
-                if usedL == 0:
-                    new[0][1] += c
-                # Add 'O' (always allowed)
-                new[0][usedL] += c
-        dp = new
+    def dp(pos: int, runA: int, usedL: int) -> int:
+        key = (pos, runA, usedL)
+        if key in memo:
+            return memo[key]
+        if pos == n:
+            memo[key] = 1
+            return 1
 
-    return sum(dp[r][u] for r in range(3) for u in (0, 1))
+        total = 0
+        # Place 'A' if it won't make 'AAA'
+        if runA < 2:
+            total += dp(pos + 1, runA + 1, usedL)
+        # Place 'L' if we haven't used any L yet
+        if usedL == 0:
+            total += dp(pos + 1, 0, 1)
+        # Place 'O' (always allowed)
+        total += dp(pos + 1, 0, usedL)
+
+        memo[key] = total
+        return total
+
+    return dp(0, 0, 0)
 
 
+# Example:
 def solve(limit):
-    print(count_valid_iter(limit))
+    print(count_valid_memo(30))  # -> 1918080160
 
 
 from mytimeit import *
