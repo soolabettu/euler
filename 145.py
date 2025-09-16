@@ -20,3 +20,17 @@ from mytimeit import *
 
 with MyTimer() as t:
     solve(10**9)
+    
+
+
+# Answer: Efficient solution by hand.
+# nine digits       none
+# eight digits    540000
+# seven digits     50000
+# six digits       18000
+# five digits       none
+# four digits        600
+# three digits       100
+# two digits          20
+#                 ______
+# Total           608720
