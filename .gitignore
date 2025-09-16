@@ -1,1 +1,5 @@
-!*.cpp
+euler/
+*.csv
+*.txt
+*.out
+__pycache__/
