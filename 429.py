@@ -1,20 +1,49 @@
+# https://projecteuler.net/problem=429
+
+import math
+
+
+def sieve_of_eratosthenes(limit):
+    prime = [True] * (limit + 1)
+    p = 2
+    while p * p <= limit:
+        if prime[p]:
+            for i in range(p * p, limit + 1, p):
+                prime[i] = False
+        p += 1
+    return [p for p in range(2, limit + 1) if prime[p]]
+
+
 def solve(limit):
-    i = 0
-    x = 1
-    k = 0
-    while i < limit:
-        x *= 2
-        k += 1
-        if x > 1000:
-            x /= 10
+    upper_limit = int(limit)
+    primes = sieve_of_eratosthenes(upper_limit)
+    ans = 1
+    mod = 10**9 + 9
+    for p in primes:
+        exp = 1
+        base = p
+        prime_exp = 0
+        while True:
+            q = limit // base
+            # print(q, base, limit)
+            if q == 0:
+                break
 
-        if int(x) == 123:
-            i += 1
+            exp += 1
+            base = p**exp
+            prime_exp += q
 
-    return k
+        # print(p, prime_exp)
+        prime_exp *= 2
+        total = p
+        for i in range(1, prime_exp):
+            total = (total * p) % mod
+        ans = (ans * (1 + total)) % mod
+
+    return ans
 
 
 from mytimeit import MyTimer
 
 with MyTimer() as t:
-    print(solve(678910))
+    print(solve(10**8))
