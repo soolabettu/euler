@@ -1,10 +1,5 @@
-import mytimeit
-from sympy import isprime
-
-
-from math import isqrt
-
-# Example
+ans = 0
+visited = set()
 
 primes_less_than_100 = [
     2,
@@ -35,25 +30,24 @@ primes_less_than_100 = [
 ]
 
 
-def divide(n):
-    if n == 1:
-        return 1
+def product(idx, total):
 
-    for p in primes_less_than_100:
-        if n % p == 0:
-            return divide(n // p)
+    global ans
+    if total in visited or total > 10**9:
+        return
 
-    return 0
+    visited.add(total)
 
+    for i in range(idx, len(primes_less_than_100)):
+        product(i, total * primes_less_than_100[i])
 
-def solve(N):
-    cnt = 0
-    for i in range(1, N + 1):
-        print(i)
-        cnt += divide(i)
+    return
 
-    return cnt
+def solve():
+    product(0, 1)
+    return len(visited)
 
+from mytimeit import MyTimer
 
-with mytimeit.MyTimer() as t:
-    print(solve(10**9))
+with MyTimer() as t:
+    print(solve())
