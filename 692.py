@@ -18,12 +18,10 @@ def solve(limit):
     A = [0] * (len(fib))
     # Recurence A(Fn) = A(Fn-1) + Fn-2 + A(Fn-2)
     ans = 0
+    ans = fib[1] + fib[2]
     for i in range(3, len(fib)):
         A[i] = A[i - 1] + fib[i - 2] + A[i - 2]
-
-    for i in range(1, len(fib)):
-        ans += fib[i]
-        ans += A[i - 1]
+        ans += fib[i] + A[i - 1]
 
     print(ans)
 
