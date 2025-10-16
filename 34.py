@@ -11,6 +11,7 @@ nums = []
 
 
 def solve():
+    """Sum all numbers equal to the sum of the factorials of their digits."""
     x = 10
     ans = 0
     while x < 1000000:

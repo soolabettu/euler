@@ -7,7 +7,9 @@ import time
 
 
 def solve():
+    """Compute the Champernowne constant digit product for specified positions."""
     def agen():
+        """Yield digits of the natural numbers concatenated together."""
         for k in count(1):
             yield from list(map(int, str(k)))
 

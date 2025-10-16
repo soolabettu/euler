@@ -12,6 +12,7 @@ from math import floor
 
 
 def solve(N):
+    """Find the least integer for which the proportion of bouncy numbers reaches 99%."""
     i = 1
     cnt = 0
     while True:

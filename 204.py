@@ -31,6 +31,7 @@ primes_less_than_100 = [
 
 
 def product(idx, total):
+    """Recursively generate all 100-smooth numbers up to one billion."""
 
     global ans
     if total in visited or total > 10**9:
@@ -44,6 +45,7 @@ def product(idx, total):
     return
 
 def solve():
+    """Count the distinct 100-smooth numbers up to one billion."""
     product(0, 1)
     return len(visited)
 

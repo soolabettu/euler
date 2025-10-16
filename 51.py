@@ -14,6 +14,7 @@ def sieve_of_eratosthenes(limit):
 
 
 def replace_occurrences(s, target, replacement):
+    """Return a new string replacing every target character with replacement."""
     count = 0
     s_list = list(s)  # make string mutable
     for i, ch in enumerate(s_list):

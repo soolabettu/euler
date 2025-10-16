@@ -27,6 +27,7 @@ from itertools import permutations
 
 
 def concat_two(nums):
+    """Return True if every concatenation of ordered pairs in nums yields a prime."""
     for a, b in permutations(nums, 2):  # ordered pairs
         x = int(str(a) + str(b))
         if visited[x] or not sympy.isprime(x):
@@ -39,6 +40,7 @@ def concat_two(nums):
 
 
 def prime_pair_sets(idx, running_lst, primes):
+    """Recursively search for sets of five primes with the concatenation property."""
     global smallest_sum, smallest_lst
 
     if len(running_lst) == 5:
@@ -58,6 +60,7 @@ def prime_pair_sets(idx, running_lst, primes):
 
 
 def solve(limit):
+    """Search primes below limit for the lowest-sum five-prime concatenation set."""
     primes = sieve_primes(limit)
     for i in range(len(primes)):
         prime_pair_sets(i + 1, [primes[i]], primes)

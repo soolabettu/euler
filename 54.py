@@ -144,6 +144,7 @@ def label(hand: str):
 
 
 def deal_two_players(cards_str: str):
+    """Split ten card tokens into two five-card hands."""
     cards = cards_str.split()
     if len(cards) != 10:
         raise ValueError("Expected 10 cards (5 each for two players)")

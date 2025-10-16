@@ -7,6 +7,7 @@ import math
 
 # Example usage
 def solve(limit):
+    """Find the longest amicable chain with members below limit."""
     a = [1] * limit
     for i in range(2, limit):
         for j in range(2 * i, limit, i):

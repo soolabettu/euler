@@ -32,6 +32,7 @@ def farey_stream(N: int, out_path: str):
 
 
 def solve(N):
+    """Generate the Farey stream output file for denominators up to N."""
     farey_stream(N, "reduced_proper_fractions_d_le_12000.txt")
 
 

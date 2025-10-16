@@ -5,6 +5,7 @@ visited = set()
 
 
 def recurse(num: str, limit: int):
+    """Recursively build Harshad numbers and collect strong, right-truncatable Harshad primes."""
     if len(num) > limit:
         return
 
@@ -26,6 +27,7 @@ def recurse(num: str, limit: int):
 
 
 def solve(limit: int):
+    """Generate and sum strong, right-truncatable Harshad primes with length up to limit."""
     for d in "123456789":
         recurse(d, limit)
 

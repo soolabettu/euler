@@ -4,6 +4,7 @@ from mytimeit import *
 
 
 def solve():
+    """Compute expected draw counts for a probabilistic model of paired tickets."""
     M0 = [0] * 500
     M1 = [0] * 500
     M1[499] = 2

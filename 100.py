@@ -27,11 +27,14 @@ def generate_pairs_pell(n_max: int) -> List[Tuple[int, int, int, int]]:
 
 
 def solve(limit):
-    return generate_pairs_pell(10**12)
+    """Find the next blue disc count exceeding limit that yields exactly 50% chance."""
+    pell_pairs = generate_pairs_pell(limit)
+    for p in pell_pairs:
+        if p[1] + 1 > limit:
+            print(p[0] + 1)
+            break
 
 
-pell_pairs = solve(10**25)
-for p in pell_pairs:
-    if p[1] + 1 > 10**12:
-        print(p[0] + 1)
-        break
+from mytimeit import MyTimer
+with MyTimer() as t:
+    solve(10**12)

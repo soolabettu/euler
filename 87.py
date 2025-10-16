@@ -18,6 +18,7 @@ import itertools
 
 
 def solve(limit):
+    """Count distinct numbers below limit representable as p^2 + q^3 + r^4."""
     primes = sieve_primes(limit)
     bucket1 = [prime**2 for prime in primes if prime**2 < 50_000_000]
     bucket2 = [prime**3 for prime in primes if prime**3 < 50_000_000]

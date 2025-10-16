@@ -4,6 +4,7 @@ visited = set()
 
 
 def recurse(start, num, total, limit):
+    """Accumulate palindromic sums of consecutive squares starting at start."""
 
     if total >= limit:
         return 0
@@ -16,6 +17,7 @@ def recurse(start, num, total, limit):
 
 
 def solve(limit):
+    """Sum all palindromic numbers below limit expressible as sums of consecutive squares."""
     for i in range(1, limit):
         recurse(i, i, i * i, limit)
 

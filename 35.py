@@ -17,6 +17,7 @@ for i in range(2, 1000000):
 
 
 def all_rotations(n):
+    """Return all cyclic rotations of the decimal representation of n."""
     num_str = str(n)
     rotations = []
     for i in range(len(num_str)):
@@ -41,3 +42,4 @@ print(ans)
 end = time.time()
 elapsed = end - start
 print(f"Program took {elapsed:.2f} seconds to run")
+

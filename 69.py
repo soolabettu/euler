@@ -21,6 +21,7 @@ def totients_up_to(n: int):
 
 # Example
 def solve(N):
+    """Find n ≤ N maximizing the ratio n/φ(n)."""
     x = totients_up_to(N)
     result = 0
     max_n = 0

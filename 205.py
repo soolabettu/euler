@@ -20,6 +20,7 @@ def sum_distribution(num_dice: int, num_faces: int) -> OrderedDict:
 
 
 def probability_player2_wins():
+    """Compute win/tie probabilities for the unequal dice game."""
     # Player 1: six d6 (sums 6..36)
     dist_p1 = sum_distribution(num_dice=6, num_faces=6)
     total_p1 = 6**6

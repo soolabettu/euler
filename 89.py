@@ -45,11 +45,12 @@ def int_to_minimal_roman(num: int) -> str:
 
 
 def simplify_roman(roman: str) -> str:
-    """Simplify a Roman numeral to its minimal form."""
+    """Return the number of characters saved by writing the numeral in minimal form."""
     return len(roman) - len(int_to_minimal_roman(roman_to_int(roman)))
 
 
 def solve(limit):
+    """Compute the total characters saved by minimizing the provided Roman numerals."""
     ans = 0
     with open("89.txt") as f:
         data = f.read()

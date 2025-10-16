@@ -8,6 +8,7 @@ import time
 
 
 def solve():
+    """Return the largest 7-digit pandigital prime."""
     import sympy
 
     for i in permutations(num):

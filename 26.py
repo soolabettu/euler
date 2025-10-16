@@ -7,6 +7,7 @@ start = time.time()
 
 
 def fun(d):
+    """Return the denominator and length of the repeating cycle in 1/d."""
     num = 1
     for i in range(d):
         num = (num * 10) % d

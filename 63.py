@@ -4,6 +4,7 @@ from math import isqrt
 
 # Example
 def solve():
+    """Count n-digit positive integers that are also nth powers."""
     ans = set([1])
     i = 2
     flag = True

@@ -118,10 +118,12 @@ def display(values):
 
 
 def solve(grid):
+    """Solve a Sudoku specified as an 81-character grid string."""
     return search(parse_grid(grid))
 
 
 def search(values):
+    """Use backtracking search with constraint propagation to solve the puzzle."""
     "Using depth-first search and propagation, try all possible values."
     if values is False:
         return False  ## Failed earlier
@@ -181,6 +183,7 @@ def solved(values):
     "A puzzle is solved if each unit is a permutation of the digits 1 to 9."
 
     def unitsolved(unit):
+        """Return True if the unit contains each digit exactly once."""
         return set(values[s] for s in unit) == set(digits)
 
     return values is not False and all(unitsolved(unit) for unit in unitlist)
@@ -208,6 +211,7 @@ def random_puzzle(N=17):
 
 
 def process_file(in_path: str, out_path: str):
+    """Convert the Project Euler Sudoku file into plain grid strings."""
     with open(in_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
@@ -224,6 +228,7 @@ def process_file(in_path: str, out_path: str):
 
 
 def solve_main():
+    """Process the Sudoku input file and return the aggregate answer."""
     process_file("0096_sudoku.txt", "grid.txt")
     return solve_all(from_file("grid.txt", "========"), "easy", None)
 

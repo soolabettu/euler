@@ -39,6 +39,7 @@ def count_prime_partitions_below(n: int) -> int:
 
 # Example
 def solve(N):
+    """Return the smallest integer ≤ N with at least 5000 prime partitions."""
     for i in range(N + 1):
         x = count_prime_partitions_below(i)
         if x >= 5000:

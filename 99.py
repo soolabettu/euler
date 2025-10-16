@@ -3,6 +3,7 @@ from math import log10
 
 
 def solve():
+    """Find the 1-indexed line containing the largest exponential value."""
     max_number = 0
     max_line = 0
     with open("0099_base_exp.txt", "r") as f:

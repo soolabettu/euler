@@ -5,14 +5,17 @@ import time
 
 
 def is_palindrome(n):
+    """Return True if integer n reads the same forward and backward."""
     return str(n) == str(n)[::-1]
 
 
 def reverse_and_add(n):
+    """Return n plus the integer formed by reversing its decimal digits."""
     return n + int(str(n)[::-1])
 
 
 def solve():
+    """Count Lychrel numbers below ten thousand via reverse-and-add iterations."""
     def is_lychrel(n, max_iterations=50):
         """
         Checks if a number 'n' is a Lychrel candidate by performing

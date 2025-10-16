@@ -28,6 +28,7 @@ from time import sleep
 
 
 def find_next(poly_nums, num_type, idx, last_two_digits, ans):
+    """Depth-first search for cyclic polygonal chains following the required suffix/prefix match."""
     if idx == len(num_type):
         q = ans[0]
         r = q % 10
@@ -69,6 +70,7 @@ from itertools import permutations
 
 # Example usage
 def solve():
+    """Search permutations of polygonal types for a six-number cyclic set."""
     poly_nums = four_digit_polygonals()
     for permutation in permutations([3, 4, 5, 6, 7, 8]):
         # print(permutation)

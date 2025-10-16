@@ -3,6 +3,7 @@ import mytimeit
 
 
 def dijkstra_min_path(grid, cell):
+    """Run Dijkstra from the top row cell and return the minimal cost path to the bottom."""
     rows, cols = len(grid), len(grid[0])
     dist = [[float("inf")] * cols for _ in range(rows)]
     parent = [[None] * cols for _ in range(rows)]
@@ -34,6 +35,7 @@ def dijkstra_min_path(grid, cell):
 
 
 def print_grid_with_path(grid, path):
+    """Pretty-print the grid highlighting the provided path coordinates."""
     path_set = set(path)
     print("\n📊 Grid with Shortest Path:")
     for r in range(len(grid)):
@@ -58,6 +60,7 @@ def print_grid_with_path(grid, path):
 
 
 def read_matrix_from_file(filepath):
+    """Load a comma-separated matrix of integers from the given file path."""
     matrix = []
     with open(filepath, "r") as file:
         for line in file:
@@ -67,6 +70,7 @@ def read_matrix_from_file(filepath):
 
 
 def transpose_matrix(matrix):
+    """Return the transpose of the matrix as nested lists."""
     return [list(row) for row in zip(*matrix)]
 
 

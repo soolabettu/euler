@@ -3,10 +3,12 @@ from collections import defaultdict
 
 
 def sort_by_length(words):
+    """Return the words sorted descending by length."""
     return sorted(words, key=len, reverse=True)
 
 
 def read_data():
+    """Load the Project Euler word list and return sorted words."""
     with open("98.txt") as f:
         data = f.read()
         words = [w.strip('"') for w in data.split(",")]
@@ -20,6 +22,7 @@ from itertools import permutations
 
 
 def go(words):
+    """Search for anagrams within the word list."""
     for w in words:
         for p in permutations(w):
             # print(p)
@@ -32,6 +35,7 @@ def go(words):
 
 
 def square_numbers():
+    """Generate all square numbers with at most nine digits."""
     i = 1
     nums = []
     while True:
@@ -45,12 +49,14 @@ def square_numbers():
 
 
 def digits_unique(s: str) -> bool:
+    """Return True if the digits in s are all distinct."""
     # Keep only digits
     digits = [ch for ch in s if ch.isdigit()]
     return len(digits) == len(set(digits))
 
 
 def reverse_map_word(mapping, digit_string):
+    """Use the digit-to-letter mapping to produce the corresponding word."""
     # Reverse the dictionary: numbers → letters
     reversed_map = {v: k for k, v in mapping.items()}
 
@@ -64,6 +70,7 @@ def reverse_map_word(mapping, digit_string):
 
 
 def is_bijective_mapping(digits: str, letters: str) -> bool:
+    """Validate that digits map bijectively to letters and return mapping dictionaries."""
     if len(digits) != len(letters):
         return (
             False,
@@ -111,6 +118,7 @@ def check_anagrams(words):
 
 
 def solve():
+    """Find the largest square number formed by mapping anagram word pairs."""
     words = read_data()
     nums = square_numbers()
     nums = sorted(nums, reverse=True)

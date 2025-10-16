@@ -1,6 +1,7 @@
 
 # Example:
 def solve(limit):
+    """Count reversible numbers below limit whose sum with their reverse has only odd digits."""
     cnt = 0
     for i in range(11, limit):
         if int(str(i)[0])%2 == int(str(i)[-1]):

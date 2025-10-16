@@ -4,6 +4,7 @@ from itertools import permutations
 
 # Example
 def solve(N):
+    """Group cubes below N by digit permutations and display the most common signatures."""
     cube_dict = {i: "".join(sorted(str(i**3))) for i in range(N)}
     value_counts = {}
     for k, v in cube_dict.items():

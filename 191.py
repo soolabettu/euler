@@ -8,6 +8,7 @@ def count_valid_memo(n: int) -> int:
     memo = {}  # (pos, runA, usedL) -> count
 
     def dp(pos: int, runA: int, usedL: int) -> int:
+        """Return the number of valid suffixes given the current state."""
         key = (pos, runA, usedL)
         if key in memo:
             return memo[key]
@@ -33,6 +34,7 @@ def count_valid_memo(n: int) -> int:
 
 # Example:
 def solve(limit):
+    """Print the number of valid attendance strings of length 30."""
     print(count_valid_memo(30))  # -> 1918080160
 
 

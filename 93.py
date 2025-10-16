@@ -9,6 +9,7 @@ import pandas as pd
 
 
 def shapes(n):
+    """Yield all full-binary tree shapes with n leaves."""
     if n == 1:
         yield ("leaf",)
         return
@@ -19,6 +20,7 @@ def shapes(n):
 
 
 def assign_ops(shape, ops):
+    """Attach operators from ops to each internal node of the tree shape."""
     if shape[0] == "leaf":
         yield ("leaf",)
         return
@@ -30,9 +32,11 @@ def assign_ops(shape, ops):
 
 
 def fill_leaves(tree, values):
+    """Populate the leaves of the operator tree with the provided values."""
     it = iter(values)
 
     def _fill(t):
+        """Return a new tree with leaves replaced by successive values."""
         if t[0] == "leaf":
             return ("leaf", next(it))
         op, L, R = t
@@ -42,6 +46,7 @@ def fill_leaves(tree, values):
 
 
 def eval_tree(t):
+    """Evaluate the expression tree using Fraction arithmetic, guarding against division by zero."""
     if t[0] == "leaf":
         return Fraction(t[1], 1)
     op, L, R = t
@@ -60,6 +65,7 @@ def eval_tree(t):
 
 
 def to_infix(t):
+    """Render the expression tree as a parenthesized infix string."""
     if t[0] == "leaf":
         return str(t[1])
     op, L, R = t
@@ -100,6 +106,7 @@ def longest_consecutive_sorted(nums):
 
 
 def solve():
+    """Determine the 4-digit set producing the longest run of consecutive positive integers."""
     combos = choose_4_from_9()  # default: digits 1..9
     ans = 0
     longest = []

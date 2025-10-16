@@ -3,7 +3,7 @@ import math
 
 
 def complementary_factors(k, n):
-    """Return all factor pairs (a, b) such that a*b = n."""
+    """Return n and the count of factor pairs (a, b) with a ≤ k and a * b == n."""
     factors = []
     for i in range(1, k + 1):
         if n % i == 0:
@@ -13,6 +13,7 @@ def complementary_factors(k, n):
 
 
 def solve(a018894):
+    """Find the smallest n in the sequence whose square has over 1000 divisors."""
     for i in a018894:
         x, y = complementary_factors(i, i * i)
         # print(x, y)

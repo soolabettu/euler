@@ -12,12 +12,14 @@ from math import floor
 
 
 def farey_left_neighbor(x, y, a, b, n):
+    """Return the greatest fraction ≤ n steps left of a/b in Farey sequence of order n."""
     while y + b <= n:
         x, y = x + a, y + b
     return Fraction(x, y)
 
 
 def solve(N):
+    """Find the largest reduced fraction less than 3/7 with denominator up to N."""
     return farey_left_neighbor(2, 5, 3, 7, N)
 
 

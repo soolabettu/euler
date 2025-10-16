@@ -7,6 +7,7 @@ import time
 
 
 def solve():
+    """Sum numbers that can be written as the sum of fifth powers of their digits."""
     import math
 
     ans = 0

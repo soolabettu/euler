@@ -7,6 +7,7 @@ from itertools import permutations
 
 
 def solve(N):
+    """Count numbers below N producing digit factorial chains of length 60."""
     steps = 0
     for i in range(1, N):
         digit_fact_sum = i

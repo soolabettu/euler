@@ -44,6 +44,7 @@ def pythagorean_triplets_perimeter(limit, primitive_only=False):
 
 # --- demo ---
 def solve(limit):
+    """Enumerate perimeters up to limit with exactly one Pythagorean triple."""
     triples = sorted(pythagorean_triplets_perimeter(limit), key=lambda t: (sum(t), t))
     print(f"{len(triples)} triples with a+b+c <= {limit}:")
     my_dict = defaultdict(int)

@@ -8,10 +8,12 @@ import time
 
 
 def is_perfect_square(n):
+    """Return True if n is a perfect square."""
     return (n**0.5).is_integer()
 
 
 def solve():
+    """Find the smallest odd composite that violates Goldbach's other conjecture."""
     import sympy
 
     i = 1

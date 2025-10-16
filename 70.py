@@ -3,6 +3,7 @@ import mytimeit
 
 
 def solve():
+    """Find the number below ten million with minimal n/φ(n) among permutation totients."""
 
     def totients_upto(n: int):
         """
@@ -24,6 +25,7 @@ def solve():
     from collections import Counter
 
     def is_permutation(s1: str, s2: str) -> bool:
+        """Return True when the two strings are permutations of each other."""
         return Counter(s1) == Counter(s2)
 
     if __name__ == "__main__":

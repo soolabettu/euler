@@ -13,6 +13,7 @@ from mytimeit import *
 
 
 def solve():
+    """Brute-force decrypt the cipher text using all three-letter lowercase keys."""
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     i = 0
     f = open("./0059_cipher.txt", "r")

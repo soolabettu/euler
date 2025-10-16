@@ -5,6 +5,7 @@ import math
 
 
 def solve(limit):
+    """Find the grid dimensions under limit whose sub-rectangle count is closest to two million."""
     margin = 3000000
     area = 0
     nearest_dim = (0, 0)

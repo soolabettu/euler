@@ -4,6 +4,7 @@ import operator
 
 
 def solve() -> int:
+    """Sum all products whose multiplicand/multiplier/product form a 1-9 pandigital identity."""
     z = set()
     result = 0
     for i in range(1, 100):

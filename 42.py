@@ -6,8 +6,10 @@ import time
 
 
 def solve():
+    """Count triangle words in the provided list."""
 
     def is_triangle_number(y, x=1, i=1):
+        """Return True if y is a triangular number."""
         while x < y:
             x = (i * (i + 1)) // 2
             i += 1

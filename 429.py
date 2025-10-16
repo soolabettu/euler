@@ -4,6 +4,7 @@ import math
 
 
 def sieve_of_eratosthenes(limit):
+    """Return all primes up to limit inclusive."""
     prime = [True] * (limit + 1)
     p = 2
     while p * p <= limit:
@@ -15,6 +16,7 @@ def sieve_of_eratosthenes(limit):
 
 
 def solve(limit):
+    """Evaluate the sum of squares of divisors product modulo 1e9+9 up to limit!."""
     upper_limit = int(limit)
     primes = sieve_of_eratosthenes(upper_limit)
     ans = 1

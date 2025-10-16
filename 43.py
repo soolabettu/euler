@@ -8,7 +8,9 @@ from itertools import *
 
 
 def solve():
+    """Sum pandigital numbers satisfying the substring divisibility property."""
     def find_permutations(s):
+        """Return every permutation of the supplied string."""
         return ["".join(p) for p in permutations(s)]
 
     permutations_list = find_permutations("1406357289")

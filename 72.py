@@ -19,11 +19,13 @@ def totients_up_to(N: int):
 
 
 def reduced_proper_fraction_count(N: int) -> int:
+    """Return the number of reduced proper fractions with denominator up to N."""
     phi = totients_up_to(N)
     return sum(phi[1:]) - 1  # subtract 0/1
 
 
 def solve(N):
+    """Print the count of reduced proper fractions with denominator up to N."""
     print(reduced_proper_fraction_count(N))
 
 

@@ -12,6 +12,7 @@ ans = 0
 
 
 def is_palindrome(s):
+    """Return True if the string s reads the same forwards and backwards."""
     return s == s[::-1]
 
 

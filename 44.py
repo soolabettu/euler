@@ -2,6 +2,7 @@ from mytimeit import *
 
 
 def solve(limit):
+    """Search pentagonal pairs under limit whose sum and difference are pentagonal."""
     i = 1
     p_nums = []
     while limit > i:

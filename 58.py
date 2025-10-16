@@ -7,6 +7,7 @@ import math
 
 
 def solve():
+    """Find the side length where primes on spiral diagonals fall below 10%."""
     x = 2
     num = 1
     cnt = 0

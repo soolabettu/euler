@@ -2,6 +2,7 @@
 
 
 def solve():
+    """Find digit-canceling fractions among two-digit numerators and denominators."""
     from fractions import Fraction
 
     two_digit_numbers = [i for i in range(10, 99) if i % 10 != 0]

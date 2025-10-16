@@ -45,6 +45,7 @@ def p(n):
 
 
 def solve():
+    """Find the smallest n such that the partition count p(n) is divisible by one million."""
     N = 100000
     vals = partitions_upto(N)
     for i in range(N + 1):

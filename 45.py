@@ -4,6 +4,7 @@ import time
 
 
 def solve() -> int:
+    """Return the next triangular number that is also pentagonal and hexagonal."""
     n = 286
     while True:
         formula = (n * (n + 1)) / 2

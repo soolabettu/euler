@@ -36,6 +36,7 @@ def sqrt_long_division(n: int, digits: int) -> str:
 
 # Example
 def solve(N):
+    """Return the sum of digital sums for square roots of non-perfect squares up to N."""
     ans = 0
     perfect_squares = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
     for i in range(1, N + 1):

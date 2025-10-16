@@ -12,6 +12,7 @@ def is_1_to_9_pandigital(num_str):
 
 
 def solve():
+    """Find the Fibonacci index where the first and last nine digits are pandigital."""
     f1, f2 = 1, 1  # Starting values as specified
     f3, f4 = 1, 1
     index = 3  # Because we already have f1 (index 1) and f2 (index 2)

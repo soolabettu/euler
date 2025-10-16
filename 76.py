@@ -22,6 +22,7 @@ print(partitions_dp(10))  # 42
 
 
 def partitions_euler(n: int) -> int:
+    """Compute the partition count using Euler's pentagonal number theorem."""
     if n < 0:
         return 0
     p = [0] * (n + 1)
@@ -43,6 +44,7 @@ def partitions_euler(n: int) -> int:
 
 
 def solve(N):
+    """Return the number of partitions of N using Euler's recurrence."""
     return partitions_euler(N)
 
 

@@ -7,6 +7,7 @@ from fractions import Fraction
 
 
 def solve():
+    """Count convergents of sqrt(2) whose numerator has more digits than denominator."""
 
     f1 = Fraction(2, 1)
     f2 = Fraction(2, 1)

@@ -6,6 +6,7 @@ import time
 
 
 def solve():
+    """Count combinations of UK coins that sum to two pounds."""
     dp = [[0] * 201]
     for i in range(1, 8):
         dp.append([0] * (201))

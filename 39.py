@@ -6,6 +6,7 @@ my_dict = defaultdict(int)
 
 
 def solve():
+    """Find the perimeter ≤ 1000 yielding the most right triangle solutions."""
     for i in range(1, 1001):
         for j in range(i + 1, 1001):
             if i + j > 1000:

@@ -5,6 +5,7 @@ from typing import List, Tuple
 
 @dataclass
 class Step:
+    """Single iteration values from the continued fraction expansion of √N."""
     k: int
     m: int
     d: int
@@ -12,6 +13,7 @@ class Step:
 
 
 def cf_sqrt(N: int) -> Tuple[int, List[int], List[Step]]:
+    """Return the continued fraction expansion components for √N."""
     a0 = int(N**0.5)
     m = 0
     d = 1
@@ -34,6 +36,7 @@ def cf_sqrt(N: int) -> Tuple[int, List[int], List[Step]]:
 def convergents_from_cf(
     a0: int, a_list: List[int], upto_k: int
 ) -> List[Tuple[int, int]]:
+    """Build convergents from the continued-fraction digits up to index upto_k."""
     p_minus2, p_minus1 = 0, 1
     q_minus2, q_minus1 = 1, 0
     convergents = []
@@ -49,6 +52,7 @@ def convergents_from_cf(
 
 
 def pell_fundamental_solution(N: int):
+    """Compute the minimal solution to x^2 - N*y^2 = 1."""
     a0, period, steps = cf_sqrt(N)
     L = len(period)
     if L % 2 == 0:
@@ -63,6 +67,7 @@ def pell_fundamental_solution(N: int):
 
 
 def solve(n):
+    """Find the D ≤ n that generates the largest minimal x in Pell's equation."""
     ans = 0
     result = 0
     for i in range(n + 1):
@@ -77,6 +82,7 @@ def solve(n):
 
 
 def is_perfect_square(n: int) -> bool:
+    """Return True if n is a perfect square."""
     if n < 0:
         return False  # negative numbers can't be perfect squares
     root = math.isqrt(n)  # integer square root (floor of sqrt(n))
@@ -87,4 +93,3 @@ from mytimeit import *
 
 with MyTimer() as t:
     print(solve(1000))
-

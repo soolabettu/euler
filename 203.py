@@ -2,6 +2,7 @@ import mytimeit
 
 
 def generate_pascals_triangle(n_rows):
+    """Generate Pascal's triangle up to n_rows and return the set of unique values."""
     triangle = [[1]]  # Start with the first row
     unique_elements = set([1])  # Set of unique elements in the first row
     for _ in range(1, n_rows):
@@ -20,6 +21,7 @@ def generate_pascals_triangle(n_rows):
 
 
 def sieve_of_eratosthenes(limit):
+    """Return a list of all primes up to and including limit."""
     # Create a boolean array "prime[0..limit]" and initialize all entries as true.
     prime = [True] * (limit + 1)
     prime[0] = prime[1] = False  # 0 and 1 are not prime
@@ -40,6 +42,7 @@ from math import isqrt
 
 
 def mobius(n):
+    """Compute the Möbius function μ(n)."""
     if n == 1:
         return 1
 
@@ -61,6 +64,7 @@ def mobius(n):
 
 
 def solve():
+    """Sum the squarefree entries in the first 51 rows of Pascal's triangle."""
     ans = 0
     rows = 51
     triangle = generate_pascals_triangle(rows)

@@ -27,10 +27,12 @@ def load_grid(path: str):
 
 
 def to_index(r, c, cols):
+    """Convert row/column coordinates to a linear node index."""
     return r * cols + c
 
 
 def from_index(idx, cols):
+    """Convert a linear node index back to row and column."""
     return divmod(idx, cols)
 
 
@@ -97,6 +99,7 @@ def dijkstra_min_path_sum(grid, adj):
 
 
 def pretty_path(path, grid):
+    """Translate a path of node indices into grid coordinates and values."""
     R, C = len(grid), len(grid[0])
     coords = [from_index(idx, C) for idx in path]
     values = [grid[r][c] for r, c in coords]

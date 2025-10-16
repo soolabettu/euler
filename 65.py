@@ -5,6 +5,7 @@ import math
 
 
 def continued_fraction_period(n):
+    """Return the sum of digits of the numerator of the nth convergent of e."""
     p2, p1, q2, q1, a = 0, 1, 1, 0, 2
 
     k = 1
@@ -26,6 +27,7 @@ def continued_fraction_period(n):
 
 
 def solve(n):
+    """Compute the requested digit sum for the nth convergent of e."""
     return continued_fraction_period(n)
 
 

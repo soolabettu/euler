@@ -2,6 +2,7 @@ import mytimeit
 
 
 def solve() -> int:
+    """Return the largest pandigital concatenated product."""
     max_prod = 0
     for i in range(99999, 1, -1):
         prod = ""

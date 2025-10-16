@@ -2,6 +2,7 @@ from time import sleep
 
 
 def solve():
+    """Enumerate numbers equal to the sum of digits of their powers and list the results."""
     results = []
     num = 2
 

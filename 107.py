@@ -4,12 +4,14 @@ from mytimeit import *
 
 
 def find(parent, x):
+    """Return the representative element for x in the union-find structure."""
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
     return parent[x]
 
 
 def union(parent, rank, x, y):
+    """Union the sets containing x and y while maintaining union-by-rank invariants."""
     root_x = find(parent, x)
     root_y = find(parent, y)
     if root_x != root_y:
@@ -23,6 +25,7 @@ def union(parent, rank, x, y):
 
 
 def kruskal_mst(adj_matrix):
+    """Return the MST edges and total weight for the given adjacency matrix."""
     n = len(adj_matrix)
     edges = []
     # Build list of edges
@@ -52,6 +55,7 @@ def kruskal_mst(adj_matrix):
 
 
 def parse_adjacency_matrix(lines):
+    """Parse the weighted adjacency matrix from CSV-style text lines."""
     matrix = []
     for line in lines:
         values = line.strip().split(",")
@@ -61,6 +65,7 @@ def parse_adjacency_matrix(lines):
 
 
 def total_weight_of_graph(adj_matrix):
+    """Sum the weights of the undirected edges in the adjacency matrix."""
     n = len(adj_matrix)
     total = 0
     for i in range(n):
@@ -70,6 +75,7 @@ def total_weight_of_graph(adj_matrix):
 
 
 def solve():
+    """Compute the savings achieved by replacing a network with its minimum spanning tree."""
     # Read lines (replace with your desired input method)
     lines = sys.stdin.read().strip().splitlines()
 

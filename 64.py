@@ -61,6 +61,7 @@ def find_odd_period_square_roots(limit):
 
 
 def solve(limit):
+    """Count the numbers up to limit whose square roots have odd continued-fraction periods."""
     # print(f"Finding square roots of numbers ≤ {limit} with odd periods...\n")
 
     odd_period_results = find_odd_period_square_roots(limit)

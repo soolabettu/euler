@@ -3,6 +3,7 @@ import mytimeit
 
 
 def solve(turns):
+    """Return the probability of winning the disc game in the given number of turns."""
 
     dp = [[Fraction(0) for _ in range(turns + 1)] for _ in range(turns + 1)]
     dp[0][0] = Fraction(1)

@@ -24,6 +24,7 @@ def check_concatenation_forms_target(s, target="123456789"):
 
 
 def solve(limit):
+    """Search for the unique square below limit whose pattern matches 1_2_3_4_5_6_7_8_9."""
     x = 10**8 + 3
     product = 1
     while True:

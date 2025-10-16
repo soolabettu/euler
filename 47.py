@@ -15,6 +15,7 @@ start = time.time()
 
 
 def fun(num, idx, count):
+    """Populate the set of distinct prime factors of num using recursive division."""
     if num == 1:
         return distinct_factors
 
