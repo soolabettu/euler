@@ -1,9 +1,23 @@
 # https://en.wikipedia.org/wiki/Fibonacci_nim
 
 from mytimeit import *
+from functools import lru_cache
+
+@lru_cache(None)
+def is_losing(n, limit):
+    """Return True when the current player loses with heap size n and max take limit."""
+    if n <= limit:
+        return False
+
+    for i in range(1, limit+1):
+        if is_losing(n - i, 2*i):
+            return False
+
+    return True
 
 
 def generate_fibonacci(limit):
+    """Generate Fibonacci numbers up to the first term >= limit."""
     a, b = 1, 1
     fib = [1, 1]
     while a < limit:
@@ -14,6 +28,7 @@ def generate_fibonacci(limit):
 
 
 def zeckendorf(orig, n, fibs, idx, prev):
+    """Compute Zeckendorf decomposition trace for orig and echo intermediate states."""
     if n == 0:
         print(orig, prev)
         return prev
@@ -28,9 +43,11 @@ def zeckendorf(orig, n, fibs, idx, prev):
         return zeckendorf(orig, n - fibs[idx], fibs, idx + 1, n)
 
 def solve(limit):
+    """Explore Fibonacci Nim positions up to limit and accumulate winning moves."""
     fib = generate_fibonacci(limit)[2:]
-    fib.reverse()
     print(fib)
+    return
+    fib.reverse()
     ans = 0
     for i in range(1, 101):
         if i in fib:
@@ -62,4 +79,21 @@ def solve(limit):
 
 
 with MyTimer() as t:
-    solve(100)
+    max_val = 0
+    n = 18
+    ans = 0
+    prev = 0
+    for n in range(1, 610):
+        valid_moves = [i for i in range(1, n) if is_losing(n - i, 2 * i)]
+        if valid_moves:
+            #print(n, max(valid_moves))
+            ans = (ans + max(valid_moves)) % 10**8
+            if n == 100:
+                print(ans)
+        else:
+            print(ans)
+            #print(prev, ans, ans - prev)
+            prev = ans
+            #ans = 0
+        
+    print(ans)
