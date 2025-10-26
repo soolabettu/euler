@@ -80,7 +80,5 @@ def solve():
     print(sum(uniq_values))
 
 
-import math
-
 with mytimeit.MyTimer() as t:
     solve()
