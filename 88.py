@@ -1,5 +1,4 @@
 import mytimeit
-from math import log10
 from collections import defaultdict
 
 
