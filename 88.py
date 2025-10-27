@@ -1,3 +1,5 @@
+"""Solutions for Project Euler problem 88 (minimal product-sum numbers)."""
+
 import math
 from collections import defaultdict
 
@@ -145,11 +147,25 @@ m = [0] * 12001
 
 
 def solve_alternate():
+    """Solve the problem via recursive search over factor combinations.
+
+    Populates ``m`` with minimal product-sum numbers using the recursive helper
+    ``explore`` and prints the sum of the unique minimal values.
+    """
     explore(1, 0, 0, 2)
     print(sum(set(m)) - 1)
 
 
 def explore(product, sum, sum_size, biggest_factor):
+    """Depth-first enumeration of factor combinations updating minimal products.
+
+    Args:
+        product (int): Current multiplicative value of the factors taken so far.
+        sum (int): Sum of the selected factors.
+        sum_size (int): Count of factors included in the current product.
+        biggest_factor (int): Smallest candidate factor to consider next to
+            enforce non-decreasing order.
+    """
     n = product - sum + sum_size
     if n <= 12000 and (m[n] == 0 or m[n] > product):
         m[n] = product
