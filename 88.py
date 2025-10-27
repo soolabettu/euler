@@ -141,6 +141,28 @@ def multiplicative_partitions(n: int):
     return sorted(S, key=lambda t: (len(t), t))
 
 
+m = [0] * 12001
+
+
+def solve_alternate():
+    explore(1, 0, 0, 2)
+    print(sum(set(m)) - 1)
+
+
+def explore(product, sum, sum_size, biggest_factor):
+    n = product - sum + sum_size
+    if n <= 12000 and (m[n] == 0 or m[n] > product):
+        m[n] = product
+
+    i = biggest_factor
+    while True:
+        if product * i > 24000:
+            return
+
+        explore(product * i, sum + i, sum_size + 1, i)
+        i += 1
+
+
 def solve():
     """Solve Project Euler problem 88.
 
@@ -162,3 +184,6 @@ def solve():
 
 with mytimeit.MyTimer() as t:
     solve()
+
+with mytimeit.MyTimer() as t:
+    solve_alternate()
