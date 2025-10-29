@@ -71,12 +71,6 @@ def last_k_repetend_digits_full_reptend_prime(p, k=5):
     return "".join(str(d) for d in out)  # zero-padding intrinsic per digit
 
 
-# Examples:
-# p=7   → '42857'   since 1/7 = 0.\overline{142857}
-# p=13  → '76923'   since 1/13 = 0.\overline{076923}
-# p=17  → '17647'   since 1/17 = 0.\overline{0588235294117647}
-
-
 import mytimeit
 
 
