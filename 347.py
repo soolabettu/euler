@@ -5,47 +5,6 @@ from collections import defaultdict
 from typing import List
 
 
-def distinct_prime_factors(n: int) -> List[int]:
-    """
-    Return a sorted list of the distinct prime factors of ``n``.
-
-    The function performs trial division and short-circuits by returning an
-    empty list as soon as it detects more than two distinct factors. This is
-    useful when callers only care about semiprimes (numbers with at most two
-    distinct prime factors).
-    """
-    if n < 2:
-        return []
-
-    factors: List[int] = []
-
-    if n % 2 == 0:
-        factors.append(2)
-        while n % 2 == 0:
-            n //= 2
-        if len(factors) > 2:
-            return []
-
-    factor = 3
-    limit = math.isqrt(n)
-    while factor <= limit and n > 1:
-        if n % factor == 0:
-            factors.append(factor)
-            while n % factor == 0:
-                n //= factor
-            limit = math.isqrt(n)
-            if len(factors) > 2:
-                return []
-        factor += 2
-
-    if n > 1:
-        factors.append(n)
-        if len(factors) > 2:
-            return []
-
-    return factors
-
-
 def primes_up_to(n: int) -> List[int]:
     """
     Return all prime numbers less than or equal to ``n``.
@@ -119,7 +78,7 @@ def solve(limit=10**7 + 1):
     accumulated once.
     """
     my_dict = defaultdict(bool)
-    primes = primes_up_to(limit//2)
+    primes = primes_up_to(limit // 2)
     for i in range(0, len(primes)):
         for j in range(i + 1, len(primes)):
             if primes[i] * primes[j] > limit:
@@ -198,30 +157,5 @@ def max_ab_product_below_N_min1(a: int, b: int, N: int):
 
 import mytimeit
 
-
-
-
-
 with mytimeit.MyTimer() as t:
-    limit = 10**7
-    answer = 0
-    primes = primes_up_to(limit//2)
-    for i in range(1, len(primes)):
-        p = primes[i]
-        for j in range(i):
-            q = primes[j]
-            l = limit//q
-            if l < p: break
-            r = p
-            z = []
-            while r <= l:
-                s = r*q
-                while s <= limit: s *= q
-                z += [s//q]
-                r *= p
-            answer += max(z)
-
-    print(answer)
-
-    # print(solve())  # solve()
-    # print(max_ab_product_below_N_min1(2, 29, 100))
+    print(solve())  # solve()
