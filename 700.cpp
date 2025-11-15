@@ -32,9 +32,12 @@ static void binary_search();
  * the Stern–Brocot tree, and continued fractions. Taking the modular midpoint
  * mirrors forming mediants in the Stern–Brocot tree: mediants that fall below
  * the irrational slope become the next convergent/Eulercoin, whereas the others
- * tighten the upper bound. This is also equivalent to the dual Beatty sequences
- * used in solve(), where the inverse sweep enumerates the complementary set of
- * convergents.
+ * tighten the upper bound. From the Farey perspective, low/high always hold a
+ * pair of neighboring fractions whose mediant bounds the irrational slope; each
+ * wrap step is simply replacing the larger neighbor by that mediant. This is
+ * also equivalent to the dual Beatty sequences used in solve(), where the
+ * inverse sweep enumerates the complementary set of convergents and guarantees
+ * every residue (and thus every Eulercoin) is visited exactly once.
  */
 static void binary_search() {
     uint64_t low = 1504170715041707LL;
