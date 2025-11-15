@@ -55,8 +55,6 @@ static void binary_search() {
         else  {
             high = mid;
         }
-
-        cout<<low<<" "<<high<<endl;
     }
 
     cout<< sum << endl;
