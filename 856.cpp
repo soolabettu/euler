@@ -35,8 +35,13 @@ static double solve(vector<int>& state) {
 
 int main() {
 
+    using clock = std::chrono::steady_clock;
+    auto start = clock::now();
     vector<int> state = {0, 0, 0, 1, 12, 3};
     cout<<setprecision(10)<<1 + solve(state)<<endl;
+    auto stop = clock::now();
+    double ms = std::chrono::duration<double, std::milli>(stop - start).count();
+    std::cout << "Elapsed: " << ms/1000 << " seconds\n";
     return 0;
 }
 
