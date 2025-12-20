@@ -18,9 +18,12 @@ std::string toBinary(int64_t n) {
 }
 
 static void solve();
-int main() {
+
+static void solve_alternate();
+static 
+void  solve() {
     // Entry point: run the search and print the answer.
-    auto start = std::chrono::steady_clock::now();
+    
     int64_t j = 1;
     int64_t p = 1;
     int64_t q = 2;
@@ -48,9 +51,51 @@ int main() {
     }
 
     cout<<sum_prev<<" "<<sum<<endl;
+}
 
-    auto end = std::chrono::steady_clock::now();
-    std::chrono::duration<double> elapsed = end - start;
-    std::cout << "Elapsed: " << elapsed.count() << " s\n";
-    return 0;
+
+static 
+void  solve_alternate() {
+    // Entry point: run the search and print the answer.
+    
+    int64_t j = 1;
+    int64_t p = 1;
+    int64_t q = 2;
+    int64_t sum_prev = 0;
+    int64_t sum = 1;
+    int64_t p_prev = 1;
+    int64_t q_prev = 2;
+    int64_t prev_half = 0;
+    uint64_t limit = 1000000000000;
+    string bin = toBinary(5*1e11);
+    cout<<bin<<endl;
+
+    // The sequence (p, q) tracks two consecutive terms a(k), a(k+1).
+    // Walking the bits of n (after the leading 1) performs a
+    // binary exponentiation-style recurrence:
+    //   bit 0: (p, q) -> (2p, p - 3q)   corresponds to doubling k
+    //   bit 1: (p, q) -> (p - 3q, 2q)   corresponds to doubling k and adding 1
+    // After processing all bits, p holds a(n) and q holds a(n+1).
+    for (char c = bin[j];c != '\0';c = bin[++j]) {
+      if (c == '0') {
+        q = p - 3 * q;
+        p = 2 * p;
+      }
+      else {
+        p = p - 3 * q;
+        q = 2 * q;
+      }
+    }
+
+    cout<<4-p<<" "<<q<<endl;
+}
+
+
+
+int main() {
+  auto start = std::chrono::steady_clock::now();
+  solve_alternate();
+  auto end = std::chrono::steady_clock::now();
+  std::chrono::duration<double> elapsed = end - start;
+  std::cout << "Elapsed: " << elapsed.count() << " s\n";
 }
