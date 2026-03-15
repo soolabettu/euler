@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 69: https://projecteuler.net/problem=69"""
+
+# Computes Euler totients and finds n <= N maximizing the ratio n/phi(n).
 
 
 def totients_up_to(n: int):
@@ -34,5 +36,4 @@ def solve(N):
     return max_n
 
 
-with mytimeit.MyTimer() as t:
-    print(solve(1000000))
+print(solve(1000000))

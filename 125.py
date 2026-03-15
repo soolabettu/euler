@@ -1,3 +1,7 @@
+"""Project Euler Problem 125: https://projecteuler.net/problem=125"""
+
+# Recursively accumulates sums of consecutive squares and totals the palindromic values found.
+
 is_palindrome = lambda n: str(n) == str(n)[::-1]
 
 visited = set()
@@ -24,7 +28,4 @@ def solve(limit):
     return sum(visited)
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    print(solve(10**8))
+print(solve(10**8))

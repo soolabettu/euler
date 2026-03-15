@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 78: https://projecteuler.net/problem=78"""
+
+# Applies the partition recurrence with generalized pentagonal numbers modulo one million.
 
 
 def generalized_pentagonals_upto(n):
@@ -55,5 +57,4 @@ def solve():
 
 
 # --- Demo ---
-with mytimeit.MyTimer() as t:
-    solve()
+solve()

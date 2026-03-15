@@ -1,5 +1,7 @@
 """Project Euler Problem 381: https://projecteuler.net/problem=381"""
 
+# Sums the prime-specific factorial remainder expression efficiently over odd primes.
+
 from __future__ import annotations
 
 from math import isqrt

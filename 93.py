@@ -1,3 +1,7 @@
+"""Project Euler Problem 93: https://projecteuler.net/problem=93"""
+
+# Enumerates expression trees over four digits to find the longest consecutive run of results.
+
 # Evaluate all full-binary expressions over operands a=1, b=2, c=3, d=4
 # using operators {+, -, *, /}, with exact rational arithmetic.
 from itertools import permutations
@@ -156,7 +160,4 @@ def solve():
     print(f"Longest consecutive: {longest}")
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    solve()
+solve()

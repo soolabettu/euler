@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 99: https://projecteuler.net/problem=99"""
+
+# Compares exponentials by logarithms and returns the line with the largest value.
+
 from math import log10
 
 
@@ -17,5 +20,4 @@ def solve():
     return max_line
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

@@ -1,14 +1,17 @@
+"""Project Euler Problem 856: https://projecteuler.net/problem=856"""
+
+# Memoizes expected remaining draws for the state-compressed bucket process.
+
 from collections import defaultdict
 from functools import lru_cache
 
 dp = defaultdict(int)
 visited = defaultdict(bool)
 
+
 @lru_cache(maxsize=None)
 def solve(state, last):
     global dp, visited
-
-
 
     visited[tuple(state)] = True
     K = sum(i * s for i, s in enumerate(state))
@@ -56,7 +59,7 @@ def solve(state, last):
     dp[tuple(state)] = 1 + ev
     return 1 + ev
 
+
 if __name__ == "__main__":
     state = [0, 0, 0, 1, 12]
     print(1 + solve(tuple(state), 3))
-

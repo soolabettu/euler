@@ -1,3 +1,5 @@
+# Discovers numbered Python scripts, runs one by problem number, and normalizes its answer output.
+
 from __future__ import annotations
 
 import argparse

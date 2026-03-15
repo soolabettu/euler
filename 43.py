@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
+# Sums pandigital numbers satisfying the substring-divisibility rules.
+
+"""Project Euler Problem 43: https://projecteuler.net/problem=43"""
+
 
 from itertools import count
 
-from mytimeit import *
-import time
 from itertools import *
 
 
 def solve():
     """Sum pandigital numbers satisfying the substring divisibility property."""
+
     def find_permutations(s):
         """Return every permutation of the supplied string."""
         return ["".join(p) for p in permutations(s)]
@@ -34,5 +37,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

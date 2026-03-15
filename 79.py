@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+# Builds precedence constraints from the login attempts to recover the shortest passcode.
+
+"""Project Euler Problem 79: https://projecteuler.net/problem=79"""
 
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
@@ -11,7 +13,6 @@ import resource, sys
 resource.setrlimit(resource.RLIMIT_STACK, (2**29, -1))
 sys.setrecursionlimit(10**6)
 
-start = time.time()
 
 distinct = set()
 for i in range(50):
@@ -20,7 +21,3 @@ for i in range(50):
         distinct.add(int(v))
 
 print(distinct)
-
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

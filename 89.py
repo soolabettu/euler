@@ -1,3 +1,7 @@
+"""Project Euler Problem 89: https://projecteuler.net/problem=89"""
+
+# Converts Roman numerals to minimal form and totals the characters saved.
+
 import math
 
 
@@ -59,7 +63,4 @@ def solve(limit):
     return ans
 
 
-import mytimeit
-
-with mytimeit.MyTimer() as t:
-    print(solve(100))
+print(solve(100))

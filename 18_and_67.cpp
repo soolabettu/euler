@@ -1,3 +1,5 @@
+// Applies bottom-up dynamic programming to find the maximum path sum through the input triangle.
+
 #include <iostream>
 #include <vector>
 using namespace std;

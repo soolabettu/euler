@@ -1,3 +1,7 @@
+"""Project Euler Problem 119: https://projecteuler.net/problem=119"""
+
+# Enumerates powers whose digit sum equals the base and collects the sequence terms.
+
 from time import sleep
 
 
@@ -20,7 +24,4 @@ def solve():
         print(i, entry)
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    solve()
+solve()

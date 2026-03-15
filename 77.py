@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 77: https://projecteuler.net/problem=77"""
+
+# Searches for the first integer with more than 5000 prime-summation partitions.
+
 from math import isqrt
 
 
@@ -47,5 +50,4 @@ def solve(N):
             return i
 
 
-with mytimeit.MyTimer() as t:
-    print(solve(1000))
+print(solve(1000))

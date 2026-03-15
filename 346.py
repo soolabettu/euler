@@ -1,9 +1,12 @@
+"""Project Euler Problem 346: https://projecteuler.net/problem=346"""
+
+# Enumerates strong repunits by summing geometric-progressions in different integer bases.
+
 """Solutions for Project Euler problem 88 (minimal product-sum numbers)."""
 
 import math
 from collections import defaultdict
 
-import mytimeit
 
 limit = 15
 
@@ -42,5 +45,4 @@ def solve(limit=10**12):
     print(ans)
 
 
-with mytimeit.MyTimer() as t:
-    solve()
+solve()

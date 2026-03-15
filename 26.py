@@ -1,9 +1,10 @@
 #!/usr/bin/env python
+# Measures recurring cycle lengths of unit fractions and finds the best denominator.
+
+"""Project Euler Problem 26: https://projecteuler.net/problem=26"""
+
 
 from datetime import date, timedelta
-import time
-
-start = time.time()
 
 
 def fun(d):
@@ -31,6 +32,3 @@ for i in range(8, 9):
         ans_i = num
 
 print(ans, ans_i)
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

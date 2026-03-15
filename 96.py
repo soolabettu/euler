@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 96: https://projecteuler.net/problem=96"""
+
+# Applies Norvig-style constraint propagation and search to solve Sudoku grids.
+
 
 from math import gcd, factorial
 from fractions import Fraction
@@ -233,5 +236,4 @@ def solve_main():
     return solve_all(from_file("grid.txt", "========"), "easy", None)
 
 
-with mytimeit.MyTimer() as t:
-    print(solve_main())
+print(solve_main())

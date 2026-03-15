@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
+# Fills a lattice-path dynamic-programming table for a 20x20 grid.
+
+"""Project Euler Problem 15: https://projecteuler.net/problem=15"""
 
 
 import math
-import time
 
 ans = 0
 num = 0
-start = time.time()
 sz = 21
 matrix = [[0 for _ in range(sz)] for _ in range(sz)]
 for i in range(sz):
@@ -20,7 +21,3 @@ for i in range(1, sz):
         matrix[i][j] = matrix[i - 1][j] + matrix[i][j - 1]
 
 print(matrix[sz - 1][sz - 1])
-end = time.time()
-elapsed = end - start
-
-print(f"Program took {elapsed:.2f} seconds to run")

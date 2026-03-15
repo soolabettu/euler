@@ -1,3 +1,7 @@
+"""Project Euler Problem 345: https://projecteuler.net/problem=345"""
+
+# Solves the maximum assignment-sum problem for the input matrix using state compression.
+
 import math
 
 
@@ -91,7 +95,5 @@ def dfs_iterative(m):
 
 
 from functools import lru_cache
-import mytimeit
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

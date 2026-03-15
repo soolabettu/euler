@@ -1,8 +1,11 @@
+# Provides a tiny context-manager timer for benchmarking local code blocks.
+
 import time
 
 
 class MyTimer:
     """Simple context manager for timing code blocks."""
+
     def __init__(self, label="Elapsed time"):
         """Initialize the timer with an optional label."""
         self.label = label

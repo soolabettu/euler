@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
+# Streams Champernowne digits and multiplies the requested digit positions together.
+
+"""Project Euler Problem 40: https://projecteuler.net/problem=40"""
+
 
 from itertools import count
-
-from mytimeit import *
-import time
 
 
 def solve():
     """Compute the Champernowne constant digit product for specified positions."""
+
     def agen():
         """Yield digits of the natural numbers concatenated together."""
         for k in count(1):
@@ -24,5 +26,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

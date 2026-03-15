@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 63: https://projecteuler.net/problem=63"""
+
+# Counts positive integers that are both n-digit numbers and exact nth powers.
+
 from math import isqrt
 
 
@@ -30,5 +33,4 @@ def solve():
     return len(ans)
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

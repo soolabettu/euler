@@ -1,3 +1,6 @@
+/* Project Euler Problem 187: https://projecteuler.net/problem=187 */
+// Generates primes and marks semiprimes below one hundred million for counting.
+
 #include <iostream>
 #include <map>
 #include <chrono>

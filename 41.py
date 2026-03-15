@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
+# Permutes pandigital digits in descending order and returns the largest prime found.
+
+"""Project Euler Problem 41: https://projecteuler.net/problem=41"""
+
 
 from itertools import permutations
 
 num = "7654321"
-
-import time
 
 
 def solve():
@@ -18,8 +20,4 @@ def solve():
             break
 
 
-start_time = time.time()
 solve()
-end_time = time.time()
-
-print("Time taken: %s seconds" % (end_time - start_time))

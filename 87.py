@@ -1,3 +1,8 @@
+"""Project Euler Problem 87: https://projecteuler.net/problem=87"""
+
+# Generates prime squares, cubes, and fourth powers and counts their distinct sums.
+
+
 def sieve_primes(limit: int) -> list[int]:
     """Return a list of primes up to and including limit using Sieve of Eratosthenes."""
     sieve = [True] * (limit + 1)
@@ -34,7 +39,4 @@ def solve(limit):
     return len(uniq_sums)
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    print(solve(50_000_000))
+print(solve(50_000_000))

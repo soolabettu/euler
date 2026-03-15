@@ -1,10 +1,11 @@
 #!/usr/bin/env python
+# Marks abundant numbers and sums integers that cannot be written as two abundant numbers.
+
+"""Project Euler Problem 23: https://projecteuler.net/problem=23"""
 
 
 from datetime import date, timedelta
-import time
 
-start = time.time()
 
 from collections import defaultdict
 
@@ -35,7 +36,3 @@ for idx, i in enumerate(num):
 
 
 print(28123 * 28124 / 2 - sum(ans))
-end = time.time()
-elapsed = end - start
-
-print(f"Program took {elapsed:.2f} seconds to run")

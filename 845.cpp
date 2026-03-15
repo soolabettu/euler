@@ -1,3 +1,6 @@
+/* Project Euler Problem 845: https://projecteuler.net/problem=845 */
+// Uses digit DP plus binary search to locate the target number whose digit sum is prime.
+
 #include <iostream>
 #include <vector>
 #include <string>

@@ -1,3 +1,7 @@
+"""Project Euler Problem 60: https://projecteuler.net/problem=60"""
+
+# Searches for a five-prime set whose pairwise concatenations remain prime.
+
 import sympy
 from collections import defaultdict
 
@@ -66,10 +70,7 @@ def solve(limit):
         prime_pair_sets(i + 1, [primes[i]], primes)
 
 
-from mytimeit import *
+import sys
 
-with MyTimer() as t:
-    import sys
-
-    sys.setrecursionlimit(10**9)
-    print(solve(10000))
+sys.setrecursionlimit(10**9)
+print(solve(10000))

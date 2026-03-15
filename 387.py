@@ -1,4 +1,7 @@
-from mytimeit import *
+"""Project Euler Problem 387: https://projecteuler.net/problem=387"""
+
+# Recursively generates strong right-truncatable Harshad primes and totals them.
+
 import sympy
 
 visited = set()
@@ -34,5 +37,4 @@ def solve(limit: int):
     print(sum(visited))
 
 
-with MyTimer() as t:
-    solve(14)
+solve(14)

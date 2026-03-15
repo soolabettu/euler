@@ -1,3 +1,5 @@
+# Defines the abstract base interface implemented by callable Euler solutions.
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod

@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 124: https://projecteuler.net/problem=124"""
+
+# Computes radicals rad(n), orders the integers by radical and value, and selects the target entry.
 
 
 import math
@@ -46,14 +48,13 @@ import operator
 from functools import reduce
 from collections import defaultdict
 
-with mytimeit.MyTimer() as t:
-    rad = defaultdict(int)
-    for i in range(1, 100001):
-        factors = distinct_prime_factors(i)
-        if factors == []:
-            rad[i] = 1
-        else:
-            rad[i] = reduce(operator.mul, factors, 1)
+rad = defaultdict(int)
+for i in range(1, 100001):
+    factors = distinct_prime_factors(i)
+    if factors == []:
+        rad[i] = 1
+    else:
+        rad[i] = reduce(operator.mul, factors, 1)
 
-    ordered_keys = sorted(rad, key=rad.get)
-    print(ordered_keys[10000 - 1])
+ordered_keys = sorted(rad, key=rad.get)
+print(ordered_keys[10000 - 1])

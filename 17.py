@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+# Converts numbers to words and counts the letters needed from 1 through 1000.
+
+"""Project Euler Problem 17: https://projecteuler.net/problem=17"""
 
 
 import math
-import time
 
 
-start = time.time()
 ans = 0
 my_dict = {
     1: "one",
@@ -62,8 +63,3 @@ for i in range(1, 1001):
 
 
 print(ans)
-
-end = time.time()
-elapsed = end - start
-
-print(f"Program took {elapsed:.2f} seconds to run")

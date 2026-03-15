@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 203: https://projecteuler.net/problem=203"""
+
+# Generates Pascal-triangle rows, filters squarefree coefficients, and sums the distinct values.
 
 
 def generate_pascals_triangle(n_rows):
@@ -75,5 +77,4 @@ def solve():
     print(ans)
 
 
-with mytimeit.MyTimer() as t:
-    solve()
+solve()

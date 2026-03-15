@@ -1,5 +1,8 @@
+"""Project Euler Problem 70: https://projecteuler.net/problem=70"""
+
+# Searches for totient permutations with the minimal ratio n/phi(n) below ten million.
+
 from array import array
-import mytimeit
 
 
 def solve():
@@ -45,5 +48,4 @@ def solve():
     return result
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

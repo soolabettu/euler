@@ -1,9 +1,13 @@
-import mytimeit
+"""Project Euler Problem 102: https://projecteuler.net/problem=102"""
+
+# Reads triangle coordinates and counts how many of the triangles contain the origin.
+
 from math import log10
 
 
 def contains_origin(p1, p2, p3):
     """Return True if the triangle defined by the three points contains the origin."""
+
     def area(x1, y1, x2, y2, x3, y3):
         """Return the signed area of the triangle defined by the three points."""
         return abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0
@@ -38,5 +42,4 @@ def solve():
     return ans
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

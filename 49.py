@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
+# Looks for arithmetic sequences of four-digit prime permutations.
+
+"""Project Euler Problem 49: https://projecteuler.net/problem=49"""
 
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
 
-start = time.time()
 ans = 0
 primes = []
 for i in range(1000, 10000):
@@ -26,7 +27,3 @@ for i in range(len(primes)):
                 and sorted(str(primes[j])) == sorted(str(k))
             ):
                 print(primes[i], primes[j], k)
-
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

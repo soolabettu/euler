@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# Convolves exact dice-sum distributions and computes the probability that Peter beats Colin.
+
+"""Project Euler Problem 205: https://projecteuler.net/problem=205"""
+
 from collections import defaultdict, OrderedDict
 from fractions import Fraction
 

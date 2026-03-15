@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
+# Follows square-digit chains and counts how many starting values end at 89.
+
+"""Project Euler Problem 92: https://projecteuler.net/problem=92"""
+
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
-start = time.time()
 sz = 10000000
 
-import time
 
 my_dict = defaultdict(set)
 cnt = 0
@@ -38,7 +39,3 @@ for i in range(1, sz):
 
 
 print(cnt)
-
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

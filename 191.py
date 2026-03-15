@@ -1,3 +1,8 @@
+"""Project Euler Problem 191: https://projecteuler.net/problem=191"""
+
+# Memoizes attendance strings with at most one late day and no three consecutive absences.
+
+
 def count_valid_memo(n: int) -> int:
     """
     Count length-n strings over {A,O,L} with:
@@ -38,7 +43,4 @@ def solve(limit):
     print(count_valid_memo(30))  # -> 1918080160
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    solve(30)
+solve(30)

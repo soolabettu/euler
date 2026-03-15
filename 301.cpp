@@ -1,3 +1,6 @@
+/* Project Euler Problem 301: https://projecteuler.net/problem=301 */
+// Brute-forces the Nim xor condition n ^ 2n ^ 3n == 0 across the full search range.
+
 #include <algorithm>
 #include <chrono>
 #include <cmath>

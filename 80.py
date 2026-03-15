@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 80: https://projecteuler.net/problem=80"""
+
+# Computes irrational square-root digits with long division and sums their digital totals.
 
 
 def sqrt_long_division(n: int, digits: int) -> str:
@@ -47,5 +49,4 @@ def solve(N):
     return ans
 
 
-with mytimeit.MyTimer() as t:
-    print(solve(100))
+print(solve(100))

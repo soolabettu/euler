@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 74: https://projecteuler.net/problem=74"""
+
+# Counts starting numbers whose digit-factorial chains contain exactly sixty terms.
+
 
 from math import gcd, factorial
 from fractions import Fraction
@@ -31,5 +34,4 @@ def solve(N):
     return steps
 
 
-with mytimeit.MyTimer() as t:
-    print(solve(1_000_000))
+print(solve(1_000_000))

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
+# Tests integers against the sum of fifth powers of their digits and sums the matches.
+
+"""Project Euler Problem 30: https://projecteuler.net/problem=30"""
+
 
 from itertools import count
-
-from mytimeit import *
-import time
 
 
 def solve():
@@ -26,5 +27,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

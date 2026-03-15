@@ -1,3 +1,6 @@
+/* Project Euler Problem 700: https://projecteuler.net/problem=700 */
+// Searches the Eulercoin record lows with modular arithmetic and sums the discovered coins.
+
 #include <iostream>
 #include <map>
 #include <vector>

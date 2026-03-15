@@ -1,3 +1,7 @@
+"""Project Euler Problem 347: https://projecteuler.net/problem=347"""
+
+# Finds the largest number below the limit divisible by exactly two distinct primes for each pair.
+
 """Utilities for working with prime factors (Project Euler problem 347 helpers)."""
 
 import math
@@ -155,7 +159,4 @@ def max_ab_product_below_N_min1(a: int, b: int, N: int):
     return best, best_ij
 
 
-import mytimeit
-
-with mytimeit.MyTimer() as t:
-    print(solve())  # solve()
+print(solve())  # solve()

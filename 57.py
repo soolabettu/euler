@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+# Counts sqrt(2) convergents whose numerators have more digits than denominators.
 
-from mytimeit import *
-import time
+"""Project Euler Problem 57: https://projecteuler.net/problem=57"""
+
+
 import math
 from fractions import Fraction
 
@@ -21,5 +23,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

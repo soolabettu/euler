@@ -1,7 +1,11 @@
+"""Project Euler Problem 366: https://projecteuler.net/problem=366"""
+
+# Recursively analyzes Fibonacci Nim positions and aggregates the required losing-state values.
+
 # https://en.wikipedia.org/wiki/Fibonacci_nim
 
-from mytimeit import *
 from functools import lru_cache
+
 
 @lru_cache(None)
 def is_losing(n, limit):
@@ -9,8 +13,8 @@ def is_losing(n, limit):
     if n <= limit:
         return False
 
-    for i in range(1, limit+1):
-        if is_losing(n - i, 2*i):
+    for i in range(1, limit + 1):
+        if is_losing(n - i, 2 * i):
             return False
 
     return True
@@ -42,6 +46,7 @@ def zeckendorf(orig, n, fibs, idx, prev):
     if n == fibs[idx]:
         return zeckendorf(orig, n - fibs[idx], fibs, idx + 1, n)
 
+
 def solve(limit):
     """Explore Fibonacci Nim positions up to limit and accumulate winning moves."""
     fib = generate_fibonacci(limit)[2:]
@@ -61,7 +66,7 @@ def solve(limit):
 
         y = fib[j]
         if (i - y) * 2 >= y:
-            ans += zeckendorf(i, i, fib, 0, 0)           
+            ans += zeckendorf(i, i, fib, 0, 0)
         else:
             ans = ans + (i - y)
 
@@ -78,22 +83,21 @@ def solve(limit):
     print(ans)
 
 
-with MyTimer() as t:
-    max_val = 0
-    n = 18
-    ans = 0
-    prev = 0
-    for n in range(1, 610):
-        valid_moves = [i for i in range(1, n) if is_losing(n - i, 2 * i)]
-        if valid_moves:
-            #print(n, max(valid_moves))
-            ans = (ans + max(valid_moves)) % 10**8
-            if n == 100:
-                print(ans)
-        else:
+max_val = 0
+n = 18
+ans = 0
+prev = 0
+for n in range(1, 610):
+    valid_moves = [i for i in range(1, n) if is_losing(n - i, 2 * i)]
+    if valid_moves:
+        # print(n, max(valid_moves))
+        ans = (ans + max(valid_moves)) % 10**8
+        if n == 100:
             print(ans)
-            #print(prev, ans, ans - prev)
-            prev = ans
-            #ans = 0
-        
-    print(ans)
+    else:
+        print(ans)
+        # print(prev, ans, ans - prev)
+        prev = ans
+        # ans = 0
+
+print(ans)

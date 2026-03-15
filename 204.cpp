@@ -1,3 +1,6 @@
+/* Project Euler Problem 204: https://projecteuler.net/problem=204 */
+// Recursively explores Hamming numbers with prime factors drawn from the primes up to 100.
+
 #include <iostream>
 #include <map>
 #include <vector>

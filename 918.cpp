@@ -1,3 +1,6 @@
+/* Project Euler Problem 918: https://projecteuler.net/problem=918 */
+// Walks binary recurrences for the custom sequence and prefix sums at very large n.
+
 #include <iostream>
 #include <chrono>
 

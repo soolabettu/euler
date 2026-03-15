@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+# Searches for the smallest integer whose first six multiples are digit permutations.
+
+"""Project Euler Problem 52: https://projecteuler.net/problem=52"""
 
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
@@ -11,7 +13,6 @@ import resource, sys
 resource.setrlimit(resource.RLIMIT_STACK, (2**29, -1))
 sys.setrecursionlimit(10**6)
 
-start = time.time()
 i = 1
 while True:
     flag = True
@@ -29,8 +30,3 @@ while True:
         break
 
     i += 1
-
-
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

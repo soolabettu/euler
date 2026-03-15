@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 32: https://projecteuler.net/problem=32"""
+
+# Searches multiplicand, multiplier, and product identities that form a 1-9 pandigital string.
+
 from functools import reduce
 import operator
 
@@ -23,5 +26,4 @@ def solve() -> int:
     return sum(z)
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

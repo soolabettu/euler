@@ -1,5 +1,8 @@
+"""Project Euler Problem 82: https://projecteuler.net/problem=82"""
+
+# Runs Dijkstra-style searches to find the minimum matrix path sum with vertical movement.
+
 import heapq
-import mytimeit
 
 
 def dijkstra_min_path(grid, cell):
@@ -74,16 +77,15 @@ def transpose_matrix(matrix):
     return [list(row) for row in zip(*matrix)]
 
 
-with mytimeit.MyTimer() as t:
-    # Run it
-    filepath = "./0082_matrix.txt"
-    matrix = read_matrix_from_file(filepath)
-    transposed = transpose_matrix(matrix)
+# Run it
+filepath = "./0082_matrix.txt"
+matrix = read_matrix_from_file(filepath)
+transposed = transpose_matrix(matrix)
 
-    min_cost = float("inf")
-    for i in range(len(transposed)):
-        cost, path = dijkstra_min_path(transposed, i)
-        min_cost = min(min_cost, cost)
+min_cost = float("inf")
+for i in range(len(transposed)):
+    cost, path = dijkstra_min_path(transposed, i)
+    min_cost = min(min_cost, cost)
 
 
 print("Minimum cost to last row:", min_cost)

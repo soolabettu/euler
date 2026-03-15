@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
+# Searches for primes that remain prime under both left and right truncation.
+
+"""Project Euler Problem 37: https://projecteuler.net/problem=37"""
 
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
 
-start = time.time()
 ans = 0
 my_dict = defaultdict(bool)
 
@@ -40,6 +41,3 @@ while True:
     i += 1
 
 print(sum)
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

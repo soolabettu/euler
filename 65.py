@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 65: https://projecteuler.net/problem=65"""
+
+# Builds convergents of e and sums the digits of the target numerator.
 
 
 import math
@@ -31,7 +33,4 @@ def solve(n):
     return continued_fraction_period(n)
 
 
-import mytimeit
-
-with mytimeit.MyTimer() as t:
-    print(solve(100))
+print(solve(100))

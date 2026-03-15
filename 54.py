@@ -1,3 +1,7 @@
+"""Project Euler Problem 54: https://projecteuler.net/problem=54"""
+
+# Parses poker hands, ranks them, and compares each deal to count player-one wins.
+
 from collections import Counter
 
 RANKS = {r: i for i, r in enumerate("..23456789TJQKA")}  # 2..A → 2..14
@@ -153,15 +157,12 @@ def deal_two_players(cards_str: str):
     return player1, player2
 
 
-import mytimeit
-
 ans = 0
-with mytimeit.MyTimer() as t:
-    with open("poker.txt") as f:
-        lines = f.readlines()
-        for line in lines:
-            h1, h2 = deal_two_players(line.strip())
-            if compare_hands(h1, h2) == 1:
-                ans += 1
+with open("poker.txt") as f:
+    lines = f.readlines()
+    for line in lines:
+        h1, h2 = deal_two_players(line.strip())
+        if compare_hands(h1, h2) == 1:
+            ans += 1
 
-        print(ans)
+    print(ans)

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Finds the non-trivial two-digit digit-cancelling fractions.
+
+"""Project Euler Problem 33: https://projecteuler.net/problem=33"""
 
 
 def solve():

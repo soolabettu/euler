@@ -1,6 +1,8 @@
-import mytimeit
+"""Project Euler Problem 48: https://projecteuler.net/problem=48"""
+
+# Computes the last ten digits of the self-power series sum.
+
 import math
-import time
 
 
 def my_pow(x) -> int:
@@ -19,5 +21,4 @@ def solve() -> int:
     return str(int(sum))[-10:]
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

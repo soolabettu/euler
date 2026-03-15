@@ -1,3 +1,8 @@
+"""Project Euler Problem 872: https://projecteuler.net/problem=872"""
+
+# Uses the target's set bits to accumulate the path sum in the problem's subtraction tree.
+
+
 # Example:
 def solve(num, target):
     n = int(bin(target), 2)
@@ -10,7 +15,4 @@ def solve(num, target):
     print(num + ans)
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    solve(10**17, 10**17 - 9**17)
+solve(10**17, 10**17 - 9**17)

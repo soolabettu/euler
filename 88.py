@@ -1,9 +1,11 @@
+"""Project Euler Problem 88: https://projecteuler.net/problem=88"""
+
+# Enumerates multiplicative partitions to derive minimal product-sum numbers up to k=12000.
+
 """Solutions for Project Euler problem 88 (minimal product-sum numbers)."""
 
 import math
 from collections import defaultdict
-
-import mytimeit
 
 
 def prime_factors(n):
@@ -198,8 +200,6 @@ def solve():
     print(sum(uniq_values))
 
 
-with mytimeit.MyTimer() as t:
-    solve()
+solve()
 
-with mytimeit.MyTimer() as t:
-    solve_alternate()
+solve_alternate()

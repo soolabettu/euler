@@ -1,3 +1,6 @@
+/* Project Euler Problem 357: https://projecteuler.net/problem=357 */
+// Marks integers whose every divisor pair d and n/d produces a prime-valued d + n/d sum.
+
 
 #include<stdio.h>
 #include<time.h>

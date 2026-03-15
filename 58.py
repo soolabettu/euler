@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+# Extends the number spiral until the diagonal prime ratio falls below ten percent.
 
-from mytimeit import *
-import time
+"""Project Euler Problem 58: https://projecteuler.net/problem=58"""
+
+
 from sympy import isprime
 import math
 
@@ -31,5 +33,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

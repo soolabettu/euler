@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
+# Finds the smallest odd composite that violates Goldbach's other conjecture.
+
+"""Project Euler Problem 46: https://projecteuler.net/problem=46"""
+
 
 from itertools import permutations
 
 num = "7654321"
-
-import time
 
 
 def is_perfect_square(n):
@@ -36,8 +38,4 @@ def solve():
             break
 
 
-start_time = time.time()
 solve()
-end_time = time.time()
-
-print("Time taken: %s seconds" % (end_time - start_time))

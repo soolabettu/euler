@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 73: https://projecteuler.net/problem=73"""
+
+# Streams reduced proper fractions in Farey order and writes them to an output file.
+
 
 from math import gcd
 from fractions import Fraction
@@ -36,5 +39,4 @@ def solve(N):
     farey_stream(N, "reduced_proper_fractions_d_le_12000.txt")
 
 
-with mytimeit.MyTimer() as t:
-    solve(12000)
+solve(12000)

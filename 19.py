@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+# Walks Sundays across the target date range to count those that fall on the first of the month.
+
+"""Project Euler Problem 19: https://projecteuler.net/problem=19"""
+
 
 from datetime import date, timedelta
 

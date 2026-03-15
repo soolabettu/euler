@@ -1,3 +1,6 @@
+/* Project Euler Problem 11: https://projecteuler.net/problem=11 */
+// Reads the 20x20 grid and scans every direction for the largest product of four adjacent values.
+
 #include <iostream>
 #include <vector>
 using namespace std;

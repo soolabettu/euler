@@ -1,4 +1,7 @@
-from mytimeit import MyTimer
+"""Project Euler Problem 725: https://projecteuler.net/problem=725"""
+
+# Uses partitions and combinatorics to sum digit-multiset constructions modulo 10^16.
+
 
 from math import comb
 
@@ -153,14 +156,13 @@ def solve(perm, limit):
     return int(sum_over_all_zeros)
 
 
-with MyTimer() as t:
-    for limit in range(2020, 2021):
-        ans = 0
-        for i in range(1, 10):
-            parts = partitions(i)
-            for p in parts:
-                x = p + [i]
-                if len(x) <= limit:
-                    ans = (ans + solve(x, limit)) % mod
+for limit in range(2020, 2021):
+    ans = 0
+    for i in range(1, 10):
+        parts = partitions(i)
+        for p in parts:
+            x = p + [i]
+            if len(x) <= limit:
+                ans = (ans + solve(x, limit)) % mod
 
-        print(ans)
+    print(ans)

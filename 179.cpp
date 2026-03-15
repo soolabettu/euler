@@ -1,3 +1,6 @@
+/* Project Euler Problem 179: https://projecteuler.net/problem=179 */
+// Counts divisors for all integers up to the limit and totals adjacent pairs with equal divisor counts.
+
 #include <iostream>
 #include <map>
 #include <chrono>

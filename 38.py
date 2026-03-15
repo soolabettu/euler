@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 38: https://projecteuler.net/problem=38"""
+
+# Builds concatenated products and keeps the largest 1-9 pandigital result.
 
 
 def solve() -> int:
@@ -19,5 +21,4 @@ def solve() -> int:
     return max_prod
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

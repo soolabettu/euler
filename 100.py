@@ -1,3 +1,7 @@
+"""Project Euler Problem 100: https://projecteuler.net/problem=100"""
+
+# Uses Pell-equation recurrences to generate the arranged-probability blue/total disc counts.
+
 from math import isqrt
 from typing import List, Tuple, Optional
 
@@ -35,6 +39,4 @@ def solve(limit):
             break
 
 
-from mytimeit import MyTimer
-with MyTimer() as t:
-    solve(10**12)
+solve(10**12)

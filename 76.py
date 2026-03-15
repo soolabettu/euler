@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 76: https://projecteuler.net/problem=76"""
+
+# Counts integer partitions of 100 using order-insensitive dynamic programming.
+
 
 from math import gcd, factorial
 from fractions import Fraction
@@ -48,5 +51,4 @@ def solve(N):
     return partitions_euler(N)
 
 
-with mytimeit.MyTimer() as t:
-    print(solve(100))
+print(solve(100))

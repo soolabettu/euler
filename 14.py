@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
+# Brute-forces Collatz chain lengths below one million to find the longest starting value.
+
+"""Project Euler Problem 14: https://projecteuler.net/problem=14"""
 
 
 import math
-import time
 
 ans = 0
 num = 0
-start = time.time()
 for i in range(1, 1000000):
     steps = 0
     x = i
@@ -23,7 +24,3 @@ for i in range(1, 1000000):
         num = i
 
 print(num)
-end = time.time()
-elapsed = end - start
-
-print(f"Program took {elapsed:.2f} seconds to run")

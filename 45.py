@@ -1,6 +1,8 @@
-import mytimeit
+"""Project Euler Problem 45: https://projecteuler.net/problem=45"""
+
+# Scans triangular numbers until one is also pentagonal and hexagonal.
+
 import math
-import time
 
 
 def solve() -> int:
@@ -19,5 +21,4 @@ def solve() -> int:
         n += 1
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

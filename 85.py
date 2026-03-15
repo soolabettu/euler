@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 85: https://projecteuler.net/problem=85"""
+
+# Searches grid dimensions whose rectangle count is closest to two million.
 
 
 import math
@@ -27,7 +29,4 @@ def solve(limit):
     return (area, nearest_dim)
 
 
-import mytimeit
-
-with mytimeit.MyTimer() as t:
-    print(solve(100))
+print(solve(100))

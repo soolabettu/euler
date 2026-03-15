@@ -1,4 +1,6 @@
-from mytimeit import *
+"""Project Euler Problem 61: https://projecteuler.net/problem=61"""
+
+# Builds four-digit polygonal numbers and searches for a cyclic six-number chain.
 
 
 def polygonal_number(s, n):
@@ -84,5 +86,4 @@ def solve():
     return
 
 
-with MyTimer() as t:
-    print(solve())
+print(solve())

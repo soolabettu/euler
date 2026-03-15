@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 112: https://projecteuler.net/problem=112"""
+
+# Counts monotone-digit numbers to find when the proportion of bouncy numbers reaches 99%.
+
 
 from math import gcd
 from fractions import Fraction
@@ -40,5 +43,4 @@ def solve(N):
         i += 1
 
 
-with mytimeit.MyTimer() as t:
-    print(solve(10))
+print(solve(10))

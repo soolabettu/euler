@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
+# Uses coin-change dynamic programming to count ways to make 200 pence.
 
-
-from mytimeit import *
-import time
+"""Project Euler Problem 31: https://projecteuler.net/problem=31"""
 
 
 def solve():
@@ -23,5 +22,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

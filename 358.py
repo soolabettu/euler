@@ -1,3 +1,7 @@
+"""Project Euler Problem 358: https://projecteuler.net/problem=358"""
+
+# Checks full reptend prime properties and extracts repetend digits for the target candidate.
+
 """Utilities for Project Euler problem 358 involving full reptend primes."""
 
 
@@ -71,9 +75,6 @@ def last_k_repetend_digits_full_reptend_prime(p, k=5):
     return "".join(str(d) for d in out)  # zero-padding intrinsic per digit
 
 
-import mytimeit
-
-
 def solve():
     """Solve Project Euler problem 358.
 
@@ -87,5 +88,4 @@ def solve():
             return (p - 1) * 9 // 2
 
 
-with mytimeit.MyTimer() as t:
-    print(solve())
+print(solve())

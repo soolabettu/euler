@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 62: https://projecteuler.net/problem=62"""
+
+# Groups cubes by sorted digits to find families of cube permutations.
+
 from itertools import permutations
 
 
@@ -15,5 +18,4 @@ def solve(N):
         print(k, v)
 
 
-with mytimeit.MyTimer() as t:
-    print(solve(10000))
+print(solve(10000))

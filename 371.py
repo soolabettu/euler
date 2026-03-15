@@ -1,6 +1,8 @@
-# https://en.wikipedia.org/wiki/Fibonacci_nim
+"""Project Euler Problem 371: https://projecteuler.net/problem=371"""
 
-from mytimeit import *
+# Evaluates the expected-value recurrence for the paired-ticket drawing process.
+
+# https://en.wikipedia.org/wiki/Fibonacci_nim
 
 
 def solve():
@@ -15,5 +17,4 @@ def solve():
         M0[i] = (1000 + ((M0[i + 1] * 2 * (499 - i))) + M1[i]) / (999 - i)
 
 
-with MyTimer() as t:
-    solve()
+solve()

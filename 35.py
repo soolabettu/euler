@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
+# Tests primes below one million for circular-prime behavior under digit rotation.
+
+"""Project Euler Problem 35: https://projecteuler.net/problem=35"""
 
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
-
-start = time.time()
 
 primes = defaultdict(bool)
 
@@ -39,7 +39,3 @@ for k, v in primes.items():
         ans += 1
 
 print(ans)
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")
-

@@ -1,3 +1,7 @@
+"""Project Euler Problem 75: https://projecteuler.net/problem=75"""
+
+# Enumerates Pythagorean triples by perimeter and counts singular integer right triangles.
+
 from collections import defaultdict
 
 from sympy import isprime
@@ -71,7 +75,4 @@ def solve(limit):
     #        print(k, v)
 
 
-from mytimeit import MyTimer
-
-with MyTimer() as t:
-    solve(1500000)
+solve(1500000)

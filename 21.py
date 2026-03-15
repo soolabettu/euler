@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
+# Computes sums of proper divisors and totals the amicable numbers below ten thousand.
+
+"""Project Euler Problem 21: https://projecteuler.net/problem=21"""
 
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
 
-start = time.time()
 ans = 0
 my_dict = defaultdict(bool)
 
@@ -32,6 +33,3 @@ for i in range(1, 10000):
         ans += sum + i
 
 print(ans)
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

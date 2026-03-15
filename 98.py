@@ -1,3 +1,7 @@
+"""Project Euler Problem 98: https://projecteuler.net/problem=98"""
+
+# Matches anagram word pairs with square numbers through consistent digit substitutions.
+
 import sympy
 from collections import defaultdict
 
@@ -166,7 +170,4 @@ def solve():
     return ans
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    print(solve())
+print(solve())

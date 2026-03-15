@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Iterates triangular numbers until one of them has more than 500 divisors.
+
+"""Project Euler Problem 12: https://projecteuler.net/problem=12"""
 
 
 import math

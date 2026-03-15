@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# Counts integer right triangles by perimeter and returns the busiest perimeter up to 1000.
+
+"""Project Euler Problem 39: https://projecteuler.net/problem=39"""
+
 
 from collections import defaultdict
 
@@ -24,12 +28,4 @@ def solve():
     print(max(my_dict, key=my_dict.get))
 
 
-import time
-
-start_time = time.time()
-
 solve()
-
-end_time = time.time()
-
-print("Time taken: %s seconds" % (end_time - start_time))

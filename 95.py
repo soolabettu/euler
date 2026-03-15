@@ -1,3 +1,7 @@
+"""Project Euler Problem 95: https://projecteuler.net/problem=95"""
+
+# Builds divisor-sum chains and finds the longest amicable cycle below the limit.
+
 import sympy
 from collections import defaultdict
 
@@ -30,7 +34,4 @@ def solve(limit):
     return max_chain
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    print(solve(1000000))
+print(solve(1000000))

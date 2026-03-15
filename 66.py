@@ -1,11 +1,17 @@
+"""Project Euler Problem 66: https://projecteuler.net/problem=66"""
+
+# Solves Pell equations via continued fractions and finds the D with the largest minimal x.
+
 import math
 
 from dataclasses import dataclass
 from typing import List, Tuple
 
+
 @dataclass
 class Step:
     """Single iteration values from the continued fraction expansion of √N."""
+
     k: int
     m: int
     d: int
@@ -89,7 +95,4 @@ def is_perfect_square(n: int) -> bool:
     return root * root == n
 
 
-from mytimeit import *
-
-with MyTimer() as t:
-    print(solve(1000))
+print(solve(1000))

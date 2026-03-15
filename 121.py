@@ -1,5 +1,8 @@
+"""Project Euler Problem 121: https://projecteuler.net/problem=121"""
+
+# Uses dynamic programming on draw outcomes to price the optimal disc-game prize fund.
+
 from fractions import Fraction
-import mytimeit
 
 
 def solve(turns):
@@ -20,13 +23,12 @@ def solve(turns):
     return sum(dp[-1][b] for b in range(turns + 1) if b > turns - b)
 
 
-with mytimeit.MyTimer() as t:
-    # ---- fifteen-turn game ----
-    p15 = solve(15)  # exact Fraction
-    p15_float = float(p15)  # ≈ 0.0004406
+# ---- fifteen-turn game ----
+p15 = solve(15)  # exact Fraction
+p15_float = float(p15)  # ≈ 0.0004406
 
-    entry_fee = 1.0  # dollars
-    payout_break_even = entry_fee / p15_float
+entry_fee = 1.0  # dollars
+payout_break_even = entry_fee / p15_float
 
-    print(f"Probability of winning in 15 turns : {p15} ≈ {p15_float:.6e}")
-    print(f"Break-even payout per win          : ${payout_break_even:,.2f}")
+print(f"Probability of winning in 15 turns : {p15} ≈ {p15_float:.6e}")
+print(f"Break-even payout per win          : ${payout_break_even:,.2f}")

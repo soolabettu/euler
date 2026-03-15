@@ -1,9 +1,11 @@
 #!/usr/bin/env python
+# Brute-forces quadratic coefficients and tracks the longest consecutive prime run.
+
+"""Project Euler Problem 27: https://projecteuler.net/problem=27"""
+
 
 from datetime import date, timedelta
-import time
 
-start = time.time()
 
 import sympy
 
@@ -49,7 +51,3 @@ for i in primes:
             n += 1
 
 print(prod, ans, x, y)
-
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

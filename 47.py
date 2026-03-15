@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+# Searches consecutive integers that each have four distinct prime factors.
+
+"""Project Euler Problem 47: https://projecteuler.net/problem=47"""
 
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
@@ -10,8 +12,6 @@ import resource, sys
 
 resource.setrlimit(resource.RLIMIT_STACK, (2**29, -1))
 sys.setrecursionlimit(10**6)
-
-start = time.time()
 
 
 def fun(num, idx, count):
@@ -47,8 +47,3 @@ for i in range(2, 1000000):
     if len(ans) == 4:
         print(ans)
         break
-
-
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

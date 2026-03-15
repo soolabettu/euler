@@ -1,9 +1,11 @@
 #!/usr/bin/env python
+# Advances the Fibonacci sequence until it reaches the first term with 1000 digits.
+
+"""Project Euler Problem 25: https://projecteuler.net/problem=25"""
+
 
 from datetime import date, timedelta
-import time
 
-start = time.time()
 
 from collections import defaultdict
 
@@ -30,8 +32,3 @@ while True:
     if len(str(f2)) >= 1000:
         print(idx)
         break
-
-
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

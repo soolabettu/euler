@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 71: https://projecteuler.net/problem=71"""
+
+# Uses Farey-neighbor logic to find the reduced fraction immediately left of 3/7.
+
 
 from math import gcd
 from fractions import Fraction
@@ -23,5 +26,4 @@ def solve(N):
     return farey_left_neighbor(2, 5, 3, 7, N)
 
 
-with mytimeit.MyTimer() as t:
-    print(solve(1000000))
+print(solve(1000000))

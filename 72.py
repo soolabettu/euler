@@ -1,4 +1,7 @@
-import mytimeit
+"""Project Euler Problem 72: https://projecteuler.net/problem=72"""
+
+# Sums Euler totients to count reduced proper fractions with bounded denominator.
+
 
 from math import gcd
 from fractions import Fraction
@@ -29,5 +32,4 @@ def solve(N):
     print(reduced_proper_fraction_count(N))
 
 
-with mytimeit.MyTimer() as t:
-    solve(1_000_000)
+solve(1_000_000)

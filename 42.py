@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
+# Scores words from input and counts those whose values are triangular numbers.
 
-
-from mytimeit import *
-import time
+"""Project Euler Problem 42: https://projecteuler.net/problem=42"""
 
 
 def solve():
@@ -42,5 +41,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

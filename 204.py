@@ -1,3 +1,7 @@
+"""Project Euler Problem 204: https://projecteuler.net/problem=204"""
+
+# Recursively enumerates Hamming numbers whose prime factors are all at most 100.
+
 ans = 0
 visited = set()
 
@@ -44,12 +48,11 @@ def product(idx, total):
 
     return
 
+
 def solve():
     """Count the distinct 100-smooth numbers up to one billion."""
     product(0, 1)
     return len(visited)
 
-from mytimeit import MyTimer
 
-with MyTimer() as t:
-    print(solve())
+print(solve())

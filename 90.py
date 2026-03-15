@@ -1,4 +1,7 @@
-from mytimeit import MyTimer
+"""Project Euler Problem 90: https://projecteuler.net/problem=90"""
+
+# Enumerates cube-face digit sets and counts pairs that can display every square number.
+
 from itertools import combinations
 from math import comb
 
@@ -60,5 +63,4 @@ def solve():
     return count // 2
 
 
-with MyTimer() as t:
-    print(solve())
+print(solve())

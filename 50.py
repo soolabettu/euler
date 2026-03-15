@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
+# Finds the prime below one million that is the longest sum of consecutive primes.
+
+"""Project Euler Problem 50: https://projecteuler.net/problem=50"""
+
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
-start = time.time()
 primes = []
 sz = 1000001
 for i in range(2, sz + 1):
@@ -31,6 +33,3 @@ for idx, i in enumerate(primes):
 
 
 print(ans, result)
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
+# Checks integers for palindromicity in both base 10 and base 2.
+
+"""Project Euler Problem 36: https://projecteuler.net/problem=36"""
 
 
 import math
-import time
 from collections import defaultdict
 import sympy
 
 
-start = time.time()
 ans = 0
 
 
@@ -24,6 +25,3 @@ for i in range(1, 1000000):
 
 
 print(ans)
-end = time.time()
-elapsed = end - start
-print(f"Program took {elapsed:.2f} seconds to run")

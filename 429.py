@@ -1,3 +1,5 @@
+# Sieves primes and multiplies the factorial divisor-square contribution modulo 1e9+9.
+
 # https://projecteuler.net/problem=429
 
 import math
@@ -45,7 +47,4 @@ def solve(limit):
     return ans
 
 
-from mytimeit import MyTimer
-
-with MyTimer() as t:
-    print(solve(10**8))
+print(solve(10**8))

@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+# Sums numbers equal to the sum of the factorials of their decimal digits.
+
+"""Project Euler Problem 34: https://projecteuler.net/problem=34"""
+
 
 from datetime import date, timedelta
-import time
 
-start = time.time()
 
 import math
 
@@ -35,8 +37,3 @@ def solve():
 
 if __name__ == "__main__":
     solve()
-
-end = time.time()
-elapsed = end - start
-
-print(f"Program took {elapsed:.2f} seconds to run")

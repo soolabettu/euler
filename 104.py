@@ -1,6 +1,8 @@
-import sys
+"""Project Euler Problem 104: https://projecteuler.net/problem=104"""
 
-from mytimeit import *
+# Searches Fibonacci indices whose leading and trailing nine digits are both 1-9 pandigital.
+
+import sys
 
 
 def is_1_to_9_pandigital(num_str):
@@ -33,5 +35,4 @@ def solve():
 if __name__ == "__main__":
 
     sys.set_int_max_str_digits(1000000)
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

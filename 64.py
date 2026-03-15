@@ -1,4 +1,6 @@
-import mytimeit
+"""Project Euler Problem 64: https://projecteuler.net/problem=64"""
+
+# Counts square roots with odd-period continued-fraction expansions up to the limit.
 
 
 import math
@@ -97,7 +99,4 @@ def solve(limit):
     #     print(f"Period {period}: {count} numbers")
 
 
-import mytimeit
-
-with mytimeit.MyTimer() as t:
-    print(solve(10000))
+print(solve(10000))

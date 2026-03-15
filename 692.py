@@ -1,6 +1,8 @@
-# https://en.wikipedia.org/wiki/Fibonacci_nim
+"""Project Euler Problem 692: https://projecteuler.net/problem=692"""
 
-from mytimeit import *
+# Uses Fibonacci-Nim recurrences to accumulate the required game-state total.
+
+# https://en.wikipedia.org/wiki/Fibonacci_nim
 
 
 def generate_fibonacci(limit):
@@ -28,5 +30,4 @@ def solve(limit):
     print(ans)
 
 
-with MyTimer() as t:
-    solve(23416728348467685)
+solve(23416728348467685)

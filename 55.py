@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
+# Runs reverse-and-add iterations to count Lychrel-number candidates below ten thousand.
 
-from mytimeit import *
-import time
+"""Project Euler Problem 55: https://projecteuler.net/problem=55"""
 
 
 def is_palindrome(n):
@@ -16,6 +16,7 @@ def reverse_and_add(n):
 
 def solve():
     """Count Lychrel numbers below ten thousand via reverse-and-add iterations."""
+
     def is_lychrel(n, max_iterations=50):
         """
         Checks if a number 'n' is a Lychrel candidate by performing
@@ -41,5 +42,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

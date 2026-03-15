@@ -1,6 +1,8 @@
-import sys
+"""Project Euler Problem 107: https://projecteuler.net/problem=107"""
 
-from mytimeit import *
+# Builds a minimum spanning tree with union-find and computes the total network saving.
+
+import sys
 
 
 def find(parent, x):
@@ -104,5 +106,4 @@ def solve():
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve()
+    solve()

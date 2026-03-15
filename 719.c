@@ -1,3 +1,6 @@
+/* Project Euler Problem 719: https://projecteuler.net/problem=719 */
+// Recursively splits square digits into chunks and sums the S-numbers that satisfy the partition rule.
+
 #include<stdio.h>
 #include<string.h>
 #include <stdint.h>

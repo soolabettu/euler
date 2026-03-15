@@ -1,9 +1,12 @@
+"""Project Euler Problem 329: https://projecteuler.net/problem=329"""
+
+# Propagates exact frog-position probabilities across prime and non-prime croak observations.
+
 """Probability propagation for Project Euler problem 329."""
 
 import math
 from collections import defaultdict
 
-import mytimeit
 from fractions import Fraction
 from sympy import isprime
 
@@ -67,5 +70,4 @@ def solve(limit=500):
     print(sum(init))
 
 
-with mytimeit.MyTimer() as t:
-    solve()
+solve()

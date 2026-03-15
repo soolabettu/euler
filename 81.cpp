@@ -1,3 +1,6 @@
+/* Project Euler Problem 81: https://projecteuler.net/problem=81 */
+// Uses dynamic programming to find the minimum path sum moving only right and down through the matrix.
+
 #include <iostream>
 #include <vector>
 using namespace std;

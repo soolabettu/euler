@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
+# Builds a grid graph and uses Dijkstra to find the four-direction minimum path sum.
+
+"""Project Euler Problem 83: https://projecteuler.net/problem=83"""
+
 import sys
 import heapq
-import mytimeit
 
 
 def load_grid(path: str):
@@ -106,17 +109,16 @@ def pretty_path(path, grid):
     return coords, values
 
 
-with mytimeit.MyTimer() as t:
-    if len(sys.argv) != 2:
-        print("Usage: python dijkstra_grid.py <path_to_matrix_file>")
-        sys.exit(1)
+if len(sys.argv) != 2:
+    print("Usage: python dijkstra_grid.py <path_to_matrix_file>")
+    sys.exit(1)
 
-    grid = load_grid(sys.argv[1])
-    adj = build_adjacency(grid)
-    total_cost, path = dijkstra_min_path_sum(grid, adj)
-    coords, vals = pretty_path(path, grid)
+grid = load_grid(sys.argv[1])
+adj = build_adjacency(grid)
+total_cost, path = dijkstra_min_path_sum(grid, adj)
+coords, vals = pretty_path(path, grid)
 
-    # print("Grid size:", len(grid), "x", len(grid[0]))
-    print("Minimum-sum path cost:", total_cost)
-    # print("Path (r,c):", coords)
-    # print("Path values:", vals)
+# print("Grid size:", len(grid), "x", len(grid[0]))
+print("Minimum-sum path cost:", total_cost)
+# print("Path (r,c):", coords)
+# print("Path values:", vals)

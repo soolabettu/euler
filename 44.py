@@ -1,4 +1,6 @@
-from mytimeit import *
+"""Project Euler Problem 44: https://projecteuler.net/problem=44"""
+
+# Generates pentagonal numbers and searches for pairs with pentagonal sum and difference.
 
 
 def solve(limit):
@@ -24,5 +26,4 @@ def solve(limit):
 
 
 if __name__ == "__main__":
-    with MyTimer(solve) as timer:
-        solve(3000)
+    solve(3000)

@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# Scans a long digit string and keeps the greatest product of thirteen consecutive digits.
+
+"""Project Euler Problem 8: https://projecteuler.net/problem=8"""
+
 
 var = input()
 candidate = ""

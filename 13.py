@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Sums one hundred large integers from standard input and prints the leading ten digits.
+
+"""Project Euler Problem 13: https://projecteuler.net/problem=13"""
 
 
 import math
