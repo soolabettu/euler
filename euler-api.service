@@ -1,0 +1,14 @@
+[Unit]
+Description=Project Euler FastAPI service
+After=default.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/euler
+ExecStart=%h/euler/.venv/bin/uvicorn api:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target

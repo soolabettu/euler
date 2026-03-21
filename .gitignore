@@ -3,3 +3,5 @@ euler/
 *.txt
 *.out
 __pycache__/
+.venv/
+!requirements.txt
