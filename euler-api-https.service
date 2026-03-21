@@ -1,0 +1,14 @@
+[Unit]
+Description=Project Euler FastAPI HTTPS service
+After=default.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/euler
+ExecStart=%h/euler/.venv/bin/uvicorn api:app --host 0.0.0.0 --port 8443 --ssl-keyfile %h/.config/euler-api/tls/euler-local-server.key --ssl-certfile %h/.config/euler-api/tls/euler-local-server.crt
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target
