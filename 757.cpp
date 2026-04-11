@@ -6,34 +6,23 @@
 
 using u64 = std::uint64_t;
 
-u64 solve(u64 n = 1000000ULL) {
-    u64 x = 1;
+u64 solve(u64 n = 1'000'000ULL) {
     std::vector<u64> values;
-    while (true) {
+    for (u64 x = 1;; ++x) {
         const u64 a = x * (x + 1);
         if (a > n / a) {
             break;
         }
 
         const u64 limit = n / a;
-        u64 y = x;
-
-        while (y <= limit / (y + 1)) {
-            const u64 value = x * y * (x + 1) * (y + 1);
-            if (value > n) {
-                break;
-            }
-
-            values.push_back(value);
-            ++y;
+        for (u64 y = x; y <= limit / (y + 1); ++y) {
+            values.push_back(a * y * (y + 1));
         }
-
-        ++x;
     }
 
     std::sort(values.begin(), values.end());
-    const u64 ans = std::unique(values.begin(), values.end()) - values.begin();
-    return ans;
+    values.erase(std::unique(values.begin(), values.end()), values.end());
+    return values.size();
 }
 
 int main() {
