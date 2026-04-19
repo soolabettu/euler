@@ -1,5 +1,6 @@
 from collections import defaultdict
 import sys
+import time
 
 inv_cnt = defaultdict(int)
 char_to_digit = {}
@@ -33,6 +34,9 @@ def solve(values, digit, count, digit_totals):
 
 
 if __name__ == "__main__":
+    start = time.perf_counter()
     s = sys.argv[1] if len(sys.argv) > 1 else "NOWPICKBELFRYMATHS"
     digits, _ = inversion_count(s)
     solve(digits, 3, inv_cnt[2], [])
+    elapsed = time.perf_counter() - start
+    print(f"Elapsed: {elapsed:.6f}s", file=sys.stderr)
