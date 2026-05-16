@@ -1,96 +1,85 @@
-
-/*
- * Project Euler 822
- */
-
+#include <inttypes.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include <math.h>
 
-void solve();
-
-static int64_t pow_mod(int64_t base, int64_t exp, int64_t mod);
-
-int main() {
-    solve();
-    return 0;
-}
-
-struct record {
-	int num;
-    int squarings;
-	double base;
-	
+enum {
+    N = 10000,
+    MOD = 1234567891
 };
 
+static const uint64_t M = 10000000000000000ULL;
 
-static
-int find_smallest(struct record * arr, int n);
+static int cmp_u64(const void *lhs, const void *rhs) {
+    uint64_t a = *(const uint64_t *)lhs;
+    uint64_t b = *(const uint64_t *)rhs;
+    return (a > b) - (a < b);
+}
 
-static
-int find_smallest(struct record* arr, int n) {
-    double min = ldexp(arr[0].base, arr[0].squarings);
-    int idx = 0;
-    for (int i = 1; i < n; i++) {
-        double x = ldexp(arr[i].base, arr[i].squarings);
-        if (x < min) {
-            min = x;
-            idx = i;
+static uint64_t pow_mod(uint64_t base, uint64_t exp, uint64_t mod) {
+    uint64_t result = 1 % mod;
+    base %= mod;
+
+    while (exp > 0) {
+        if (exp & 1ULL) {
+            result = (result * base) % mod;
+        }
+        base = (base * base) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+static size_t find_min_index(const uint64_t *values, size_t len) {
+    size_t min_index = 0;
+    for (size_t i = 1; i < len; ++i) {
+        if (values[i] < values[min_index]) {
+            min_index = i;
         }
     }
-
-    // printf("idx = %d, arr[%d].num = %d, arr[%d].base = %f, arr[%d].exp = %d\n", idx, idx, arr[idx].num, idx, arr[idx].base, idx, arr[idx].exp);
-    return idx;
+    return min_index;
 }
 
-void solve() {
-    int upper_limit = 10;
-    int n = upper_limit - 1;
-    struct record *arr = (struct record*)malloc(n * sizeof(struct record));
-    int64_t m = 100;
-    int64_t mod = 1234567891;
-    for (int i = 0; i < n ; i++) {
-        arr[i].num = i + 2;
-        arr[i].squarings = 0;
-        arr[i].base = log(arr[i].num);
-        // printf("arr[%d]->num = %d\n", i, arr[i].num);
-        // printf("arr[%d]->base = %f\n", i, arr[i].base);
-    }
-    
-    for (int i = 0; i < m; i++) {
-        int idx = find_smallest(arr, n);
-        arr[idx].squarings += 1;
-        // printf("After operation %d: arr[%d] = %lld\n", i, idx, arr[idx]);
+int main(void) {
+    uint64_t *values = malloc((N - 1) * sizeof(*values));
+    if (values == NULL) {
+        fprintf(stderr, "allocation failed\n");
+        return 1;
     }
 
-    // for (int i = 0; i < n; i++) {
-    //     printf("arr[%d].num = %d, arr[%d].exp = %d\n", i, arr[i].num, i, arr[i].exp);
-    // }
-
-    int64_t total = 0;
-    for (int i = 0; i < n; i++) {
-        int64_t e = pow_mod(2, arr[i].squarings, mod - 1);
-        int64_t term = pow_mod(arr[i].num, e, mod);
-        total = (total + term) % mod;
+    for (size_t i = 0; i < N - 1; ++i) {
+        values[i] = i + 2;
     }
 
-    printf("Total: %lld\n", total);
-    free(arr);
-}
+    uint64_t remaining = M;
 
+    // Mirror the Python pre-balancing phase exactly.
+    while (1) {
+        size_t min_index = find_min_index(values, N - 1);
+        uint64_t min_value = values[min_index];
+        if (min_value > N / min_value) {
+            break;
+        }
+        values[min_index] = min_value * min_value;
+        --remaining;
+    }
 
-static int64_t pow_mod(int64_t base, int64_t exp, int64_t mod) {
-      int64_t result = 1 % mod;
-      base %= mod;
+    qsort(values, N - 1, sizeof(*values), cmp_u64);
 
-      while (exp > 0) {
-          if (exp & 1) {
-              result = (result * base) % mod;
-          }
-          base = (base * base) % mod;
-          exp >>= 1;
-      }
+    uint64_t q = remaining / (N - 1);
+    uint64_t r = remaining % (N - 1);
 
-      return result;
+    uint64_t total = 0;
+    for (size_t i = 0; i < N - 1; ++i) {
+        uint64_t extra_squarings = q + (i < r ? 1ULL : 0ULL);
+        uint64_t exponent = pow_mod(2, extra_squarings, MOD - 1);
+        uint64_t term = pow_mod(values[i], exponent, MOD);
+        total += term;
+        total %= MOD;
+    }
+
+    printf("%" PRIu64 "\n", total);
+    free(values);
+    return 0;
 }
