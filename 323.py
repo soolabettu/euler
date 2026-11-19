@@ -1,44 +1,14 @@
-"""Project Euler Problem 323: https://projecteuler.net/problem=323"""
+#!/usr/bin/env python3
 
-# Simulates repeated bitwise ORs of random 32-bit values until every bit has been set.
+import math
 
+max_k = 41
 
-import random
+# The k = 0 term is exactly 1.
+terms = [1.0]
+for k in range(1, max_k + 1):
+    p = 2.0 ** (-k)
+    terms.append(-math.expm1(32 * math.log1p(-p)))
 
-
-# Examples
-def solve():
-    xprev = 0
-    limit = 2**32 - 1
-    yprev = random.randint(0, limit)
-    i = 0
-    while True:
-        i += 1
-
-        xnext = xprev | yprev
-        if xnext == limit:
-            break
-
-        xprev = xnext
-        yprev = random.randint(0, limit)
-
-    # print(i)
-    return i
-
-
-from decimal import Decimal, getcontext
-
-
-limit = 10**9
-x = 0
-for i in range(limit):
-    x += solve()
-
-y = x / limit
-
-print(y)
-# getcontext().prec = 10
-
-# Example calculation
-# result = Decimal(str(x)) / Decimal(str(limit))
-# print(result)
+expected_t = math.fsum(terms)
+print(f"E[T] ≈ {expected_t:.10f}")
